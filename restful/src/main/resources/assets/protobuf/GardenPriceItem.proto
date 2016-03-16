@@ -1,0 +1,8 @@
+message GardenPriceItem
+{
+    // 年月: yyyy-MM  (2015-12)
+    required string month = 1;
+
+    // 价格: 9999999  (7位整数: >= 0 and <= 9999999)
+    required int32  price = 2;
+}

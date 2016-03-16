@@ -1,0 +1,8 @@
+message GardenPriceNews
+{
+    required string date = 1;
+
+    required string caption = 2;
+
+    required string content = 3;
+}

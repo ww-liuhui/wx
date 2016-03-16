@@ -1,0 +1,15 @@
+// 消息类型
+message NewsType
+{
+    // ID
+    optional int32 typeId = 1;
+
+    // 名称
+    optional string typeName = 2;
+
+    // 图标
+    optional string typeIconUrl = 3;
+
+    // 排序
+    optional int32 orderNum = 4 [default=0];
+}

@@ -1,0 +1,133 @@
+server:
+  applicationConnectors:
+      - type: http
+        # The port the application will listen on
+        port: 8011
+  adminConnectors:
+      - type: http
+        # The admin port
+        port: 8282
+# api settings.
+api:
+  host: http://proapi.weiwuu.net:8080
+  imhost: http://proapi.weiwuu.net:8090
+# redis settings.
+redisService:
+  host: localhost
+  port: 6379
+  timeout: 1000
+  password: weiwui2015
+  database: 0
+# wx settings.
+wxconfig:
+  appID: wxa33c55ef7bf07dc01
+  appSecret: b0b0fd34ebb1ca464ef5f5d621055177
+  token: weiwuu
+  encodingAESKey: Im0hMqTKI0Ts2WiA3p7hRiea9NGDlvbvT4fW6uzMVY1
+  appID2: wx7a3e90e6805f58d31
+  appSecret2: eb74d05412043f88371f80670c60b5bd
+verify:
+  name: proapi.weiwuu.net
+  expires_in: 7200
+# mysql settings.
+database:
+  # the name of your JDBC driver
+  driverClass: com.mysql.jdbc.Driver
+
+  # the username
+  #user: root
+
+  # the password
+  #password: 142328
+
+  # the JDBC URL
+  #url: jdbc:mysql://localhost:3306/fairy?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+
+  # the username
+  user: weiwuu
+
+  # the password
+  password: WeiWuu3195
+
+  # the JDBC URL
+  url: jdbc:mysql://weiwuu2015.mysql.rds.aliyuncs.com:3306/pro_weiwuu?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
+
+  # the maximum amount of time to wait on an empty pool before throwing an exception
+  maxWaitForConnection: 1s
+
+  # the SQL query to run when validating a connection's liveness
+  validationQuery: "/* MyService Health Check */ SELECT 1"
+
+  # the timeout before a connection validation queries fail
+  validationQueryTimeout: 3s
+
+  # the minimum number of connections to keep open
+  minSize: 8
+
+  # the maximum number of connections to keep open
+  maxSize: 64
+
+  # whether or not idle connections should be validated
+  checkConnectionWhileIdle: true
+
+  # the amount of time to sleep between runs of the idle connection validation, abandoned cleaner and idle pool resizing
+  evictionInterval: 10s
+
+  # the minimum amount of time an connection must sit idle in the pool before it is eligible for eviction
+  minIdleTime: 1 minute
+
+#auth config
+#authenticationCachePolicy:
+#  maximumSize: 10000
+#  expireAfterAccess: 10m
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+
+    # Overrides the level of com.example.dw.Thing and sets it to DEBUG.
+    "com.weiwui.cloud.user": DEBUG
+
+  appenders:
+    - type: console
+    - type: file
+      threshold: DEBUG
+
+      logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
+
+      # The file to which current statements will be logged.
+      currentLogFilename: ./log/im.log
+
+      # When the log file rotates, the archived log will be renamed to this and gzipped. The
+      # %d is replaced with the previous day (yyyy-MM-dd). Custom rolling windows can be created
+      # by passing a SimpleDateFormat-compatible format as an argument: "%d{yyyy-MM-dd-hh}".
+      archivedLogFilenamePattern: ./log/im-%d.log.gz
+
+      # The number of archived files to keep.
+      archivedFileCount: 7
+
+      # The timezone used to format dates. HINT: USE THE DEFAULT, UTC.
+      timeZone: UTC
+
+      # The max size of log file
+      #maxFileSize: 10MB
+
+#httpClient:
+#  timeout: 500ms
+#  connectionTimeout: 500ms
+#  timeToLive: 1h
+#  cookiesEnabled: false
+#  maxConnections: 1024
+#  maxConnectionsPerRoute: 1024
+#  keepAlive: 0ms
+#  retries: 0
+#  userAgent: <application name> (<imserver.client name>)

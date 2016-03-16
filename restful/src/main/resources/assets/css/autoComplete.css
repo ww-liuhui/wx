@@ -1,0 +1,5 @@
+.autoComplete {position:relative;}
+.autoComplete ul {z-index:12;padding:0px;margin:0px;border:1px gainsboro solid;width:60%;background:white;display:none;position:absolute;left:20px;top:40px;margin-top:1px;}
+.autoComplete li {list-style:none;}
+.autoComplete li a {display:block;color:#000;text-decoration:none;padding:1px 0 1px 5px;_width:97%;}
+.autoComplete li a:hover {color:#000;background:#ccc;border:none;}

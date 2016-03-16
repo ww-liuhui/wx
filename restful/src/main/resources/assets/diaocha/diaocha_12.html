@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>拖延症测试</title>
+           <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+           <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+           <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!--        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>-->
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            
+            var descok = "想知道你是否有拖延症么？";//分享内容
+            
+            var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、我总是在做本该前几天就完成了的工作。";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[0]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[0]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[0]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[0]['ans'][4] = {"name":"完全符合","score":1};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、一般不会等到任务快到最后期限了，我才开始着手做。";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[1]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[1]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[1]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[1]['ans'][4] = {"name":"完全符合","score":1};
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、不管图书馆借的书有没有到期，只要看完了就会马上归还。";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[2]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[2]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[2]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[2]['ans'][4] = {"name":"完全符合","score":1};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、通常早上到了起床的时间，我都会立刻起床。";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[3]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[3]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[3]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[3]['ans'][4] = {"name":"完全符合","score":1};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、我一般及时回复电子邮件和电话。";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[4]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[4]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[4]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[4]['ans'][4] = {"name":"完全符合","score":1};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、我写好的信一般都会及时寄出去。";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[5]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[5]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[5]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[5]['ans'][4] = {"name":"完全符合","score":1};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、那些只需要静心坐下来就能完成的简单工作，我想立马开始。";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[6]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[6]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[6]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[6]['ans'][4] = {"name":"完全符合","score":1};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、那些必须要做的事，我会立马开始。";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[7]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[7]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[7]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[7]['ans'][4] = {"name":"完全符合","score":1};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、我一般都很果断地的做出决定。";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[8]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[8]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[8]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[8]['ans'][4] = {"name":"完全符合","score":1};
+            //问题10
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、准备外出的时候，我会提前做好准备。";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[9]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[9]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[9]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[9]['ans'][4] = {"name":"完全符合","score":1};
+            //问题11
+            Allquestion[10] = Array();
+            Allquestion[10]['tid'] = "11";
+            Allquestion[10]['title'] = "11、为了在最后期限完成任务，我从不匆忙行事。";
+            Allquestion[10]['ans'] = Array();
+            Allquestion[10]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[10]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[10]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[10]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[10]['ans'][4] = {"name":"完全符合","score":1};
+            //问题12
+            Allquestion[11] = Array();
+            Allquestion[11]['tid'] = "12";
+            Allquestion[11]['title'] = "12、对于要做的事情快到期限，我从不会把时间浪费在其它事上。";
+            Allquestion[11]['ans'] = Array();
+            Allquestion[11]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[11]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[11]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[11]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[11]['ans'][4] = {"name":"完全符合","score":1};
+             //问题13
+            Allquestion[12] = Array();
+            Allquestion[12]['tid'] = "13";
+            Allquestion[12]['title'] = "13、赴约的时候，我喜欢提前出发。";
+            Allquestion[12]['ans'] = Array();
+            Allquestion[12]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[12]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[12]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[12]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[12]['ans'][4] = {"name":"完全符合","score":1};
+             //问题14
+            Allquestion[13] = Array();
+            Allquestion[13]['tid'] = "14";
+            Allquestion[13]['title'] = "14、任务一分配下来，我一般很快开始动手。";
+            Allquestion[13]['ans'] = Array();
+            Allquestion[13]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[13]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[13]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[13]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[13]['ans'][4] = {"name":"完全符合","score":1};
+             //问题15
+            Allquestion[14] = Array();
+            Allquestion[14]['tid'] = "15";
+            Allquestion[14]['title'] = "15、我经常提前完成任务。";
+            Allquestion[14]['ans'] = Array();
+            Allquestion[14]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[14]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[14]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[14]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[14]['ans'][4] = {"name":"完全符合","score":1};
+            //问题16
+            Allquestion[15] = Array();
+            Allquestion[15]['tid'] = "16";
+            Allquestion[15]['title'] = "16、我总是提前购买生日或圣诞礼物。";
+            Allquestion[15]['ans'] = Array();
+			Allquestion[15]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[15]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[15]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[15]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[15]['ans'][4] = {"name":"完全符合","score":1};
+			//问题17
+            Allquestion[16] = Array();
+            Allquestion[16]['tid'] = "17";
+            Allquestion[16]['title'] = "17、当面对一大堆工作时，我总会先分清主次，从重要的开始着手做。";
+            Allquestion[16]['ans'] = Array();
+			Allquestion[16]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[16]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[16]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[16]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[16]['ans'][4] = {"name":"完全符合","score":1};
+			//问题18
+            Allquestion[17] = Array();
+            Allquestion[17]['tid'] = "18";
+            Allquestion[17]['title'] = "18、按计划完成一天的工作任务对我来说没有什么大问题。";
+            Allquestion[17]['ans'] = Array();
+			Allquestion[17]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[17]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[17]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[17]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[17]['ans'][4] = {"name":"完全符合","score":1};
+			//问题19
+            Allquestion[18] = Array();
+            Allquestion[18]['tid'] = "19";
+            Allquestion[18]['title'] = "19、我总是把所有的事情都处理好后才去放松或者休息。";
+            Allquestion[18]['ans'] = Array();
+			Allquestion[18]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[18]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[18]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[18]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[18]['ans'][4] = {"name":"完全符合","score":1};
+			//问题20
+            Allquestion[19] = Array();
+            Allquestion[19]['tid'] = "20";
+            Allquestion[19]['title'] = "20、我从不对自己说：明天我就会把这些事情做完的。";
+            Allquestion[19]['ans'] = Array();
+			Allquestion[19]['ans'][0] = {"name":"完全不符合","score":5};
+            Allquestion[19]['ans'][1] = {"name":"不太符合","score":4};
+            Allquestion[19]['ans'][2] = {"name":"不确定","score":3};
+			Allquestion[19]['ans'][3] = {"name":"比较符合","score":2};
+			Allquestion[19]['ans'][4] = {"name":"完全符合","score":1};
+            
+            
+            var Allans = Array();
+            //答案A
+            Allans[0] = Array();
+            Allans[0]['tip'] = "A";
+            Allans[0]['title'] = "完全没有拖延症";
+            Allans[0]['content'] = "你做事很有激情，很专注，人们往往会依赖你来完成一项工作，对你做事感到非常放心。你绝不会拖延，也不会沉溺于原地放松的状态，相反，你有十分的动力，除了把工作完成，还能有效处理生活中其他方面的事情。恭喜你！但同时，你也需要忙里偷闲，给自己一个轻松的时间。";
+            //答案B
+            Allans[1] = Array();
+            Allans[1]['tip'] = "B";
+            Allans[1]['title'] = "视情况而拖延";
+            Allans[1]['content'] = "当你遇到自己不情愿做的任务或艰巨的任务时会拖延。不过一旦你下定决心做某件事，即使它很难对付，你也会很有自信，并且能够控制自己不分心，集中注意力完成任务。";
+            //答案C
+            Allans[2] = Array();
+            Allans[2]['tip'] = "C";
+            Allans[2]['title'] = "有轻微的拖延倾向";
+            Allans[2]['content'] = "你所完成的工作常常都不是很完美，因为你没有给自己充足的时间去好好雕琢细节。你会有轻微的拖延倾向，但这并没有影响你的整体工作效率。好好思考自己在哪个环节上易产生拖延，然后在这方面努力做出一些改变吧！";
+            //答案D
+            Allans[3] = Array();
+            Allans[3]['tip'] = "D";
+            Allans[3]['title'] = "有中度拖延倾向";
+            Allans[3]['content'] = "我知道你不喜欢自己拖延，但你离重度拖延不远啦！你总是心急火燎地赶工，在最后一刻完成任务。当回头看自己的一天甚至过去的一周时，你都会很惊奇感慨：“这些时间都去哪儿了？我都干了些什么？”你可以通过对任务进行优先级管理来帮助自己摆脱拖延，并思考思考到底什么才是你生命最重要的。";
+            //答案E
+            Allans[4] = Array();
+            Allans[4]['tip'] = "E";
+            Allans[4]['title'] = "有重度拖延倾向";
+            Allans[4]['content'] = "你习惯于把重要的工作和一些毫不相关的小事混在一起。你经常拖延工作甚至根本就无视工作。你把大把时间浪费在了制定计划和目标、做白日梦上面。或许你需要一个时间管理教练，或自己开始学习时间管理。时间管理能教你设定可达成的目标，并且找到终结拖延习惯的积极途径，你一定会从中受益！";
+            
+            $(function(){
+                $.getJSON("http://115.29.231.215/index.php/Wap/Hdyue/getWelcomeNum",{diaoId:12},function(data){
+                    if(data['info'] == "ok"){
+                        var str = "总共有"+ data['data'] +"人测试过!!!";
+                    }
+                    $('#pNum').html(str);
+                });
+            }); 
+           
+            function reloadme(){
+                location.reload();             
+            }
+           
+            function start(obj,id){
+                if(id == 0){
+                    $(obj).removeClass().addClass("img-thumbnail");
+                    setTimeout(function(){nextQuestion(id,0)},500);
+                }             
+            }
+            var myscore = 0;
+            function selectMe(obj,id,score){
+                $(obj).parent().removeClass().addClass("danger");
+                setTimeout(function(){nextQuestion(id,score)},500);
+            }
+            function nextQuestion(nowid,score){
+                myscore += score;
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid >= questionLeng){
+                    var anstr = '<table class="table"><tbody>';
+                    
+                    var resTitle = "测试结果为:";
+                    var result = "";
+                    
+                    var ansId = 0;
+                    if(myscore <= 19 ){
+                        ansId = 0;
+                    }else if(myscore <= 39){
+                        ansId = 1;
+                    }else if(myscore <= 59){
+                        ansId = 2;
+                    }else if(myscore <= 79){
+                        ansId = 3;
+                    }else{
+					    ansId = 4;
+					}
+                    resTitle = "评估结果:<br/>" + Allans[ansId]['title'];
+                    descok = Allans[ansId]['title'];
+                    result = Allans[ansId]['content'];
+                    
+                    
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary btn-lg btn-block" onclick="show()">晒一晒你的评估结果</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success btn-lg btn-block" target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd">关注酷玩大学，大学不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-success btn-lg btn-block" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" target="_blank" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">更多测试</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center">'+ resTitle +'</h4>如下图：<img width="100%" src="share/tuoyan.jpg"><h5 class="text-center">'+ result +'</h5>' + anstr;
+                }else{
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+           
+                    var anstr = '<table class="table"><tbody>';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        //                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "warning";
+                                break;
+                        }
+                        anstr += '<tr class='+ className +'><td class="text-center" onclick="selectMe(this,'+ Allquestion[nowid]['tid'] +','+ Allquestion[nowid]['ans'][i]["score"] +');">'+ Allquestion[nowid]['ans'][i]["name"] +'</td></tr>';
+                    }
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 id="'+ tid +'" class="text-center">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/diaocha1/share/120.jpg',
+                "link":'http://115.29.231.215/diaocha1/diaocha_12.html',
+                "desc":"测一测你是否有拖延症？",
+                "title":"测一测你是否有拖延症？"
+            };
+            function share(){
+                document.title = window.wxData.desc = "<br/>经过测试,我拖延症评估结果为：" + descok ;
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+                share();//分享初始化
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        <!--<div class="head">-->
+            <!--<a target="_blank" href=""><img src="head.png"></a>-->
+        <!--</div>-->
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <br/>
+                <div class="span12">
+                    <table class="table">
+					    <caption>
+						    <h5 id="pNum" class="text-danger text-center">&nbsp;</h5>
+                            <p id="backTime" class="text-danger text-center">点击下图开始拖延症评估~</p>
+                        </caption>
+                        <tbody>
+						     <tr>
+                                <td><p class="text-center text-primary"><img class="img-rounded" src="head12.jpg" width="95%" onclick="start(this,0)"></p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+						<p class="text-center"><a type="button" class="btn btn-success text-center btn-lg btn-block" target="_blank"href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">更多测试</a></p>
+                           </div>
+                         </div>
+                      </div>
+
+                                        <div id="fade" class="black_overlay" onclick="hide()">
+                                            <img src="share.png" style="width:100%"/>
+                                        </div>
+                                        </body>
+                                        </html>			

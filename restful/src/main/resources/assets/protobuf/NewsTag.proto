@@ -1,0 +1,11 @@
+// 消息标签
+message NewsTag
+{
+    // 标签ID
+    optional int32 id = 1;
+
+    // 标签: (限制字数 <= 16)
+    optional string tag = 2;
+	// 说明: (限制字数 <= 256)
+    optional string notes = 3;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <title>为屋—我要找房</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/bootstarap.css" media="all">
+
+    <script src="js/jquery-1.8.0.min.js"></script>
+</head>
+<body>
+<div class="row" style="margin: 0px;padding: 0px;">
+    <div class="col-xs-4" style="margin: 0px;padding: 0px;-webkit-overflow-scrolling:touch;overflow-y:scroll;">
+        <iframe id="list" src="" height="100%" width="100%" scrolling="yes" frameborder="0"></iframe>
+    </div>
+    <div class="col-xs-8" style="margin: 0px;padding: 0px;-webkit-overflow-scrolling:touch;overflow-y:scroll;">
+        <iframe id="detail" src="" height="100%" width="100%" scrolling="yes" frameborder="0"></iframe>
+    </div>
+</div>
+<script type="text/javascript">
+    var w = $(window).height();
+    $(".col-xs-4").height(w);
+    $(".col-xs-8").height(w);
+
+    //获取地址参数
+    function getUrlVars(){
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?')+1).split('&');
+        for(var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    //获取参数ID
+    var params = getUrlVars();
+    var gid = params["id"];
+    var p_city_id = params["cityId"];
+    var p_page_index = params["pageIndex"];
+    var p_page_size = params["pageSize"];
+    if(isNaN(p_page_index)){
+        p_page_index = 0;
+    }
+    if(isNaN(p_page_size)){
+        p_page_size = 20;
+    }
+
+    $("#list").attr("src","listipad.html?id="+gid+"&cityId="+p_city_id+"&pageIndex="+p_page_index+"&pageSize="+p_page_size);
+    $("#detail").attr("src","detail.html?id="+gid+"&device=ipad");
+</script>
+</body>
+
+</html>

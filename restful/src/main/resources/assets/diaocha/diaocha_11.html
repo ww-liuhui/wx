@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>测测你看过几部禽兽极禁片</title>
+        <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <!--        <link href="bootstrap.min.css" rel="stylesheet">
+                <script src="jquery.min.js"></script>
+                <script src="bootstrap.min.js"></script>-->
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            
+            var descok = "测测你看过几部禽兽极禁片";//分享内容
+            
+var Allquestion = Array();
+                        var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、丧尽天良！舅舅监禁妹妹追杀外甥";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"西游记","score":0};
+            Allquestion[0]['ans'][1] = {"name":"阿凡提","score":0};
+            Allquestion[0]['ans'][2] = {"name":"宝莲灯","score":10};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、白女士整容三次均失败，最后竟让乱棍打死";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"妖精的尾巴","score":0};
+            Allquestion[1]['ans'][1] = {"name":"三打白骨精","score":10};
+            Allquestion[1]['ans'][2] = {"name":"花木兰从军","score":0};
+            
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、男人误食罐头，吃了以后暴力无比";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"全职猎人","score":0};
+            Allquestion[2]['ans'][1] = {"name":"大力水手","score":10};
+            Allquestion[2]['ans'][2] = {"name":"海贼王","score":0};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、无耻幼童整日胡言乱语，终日猥亵年长女性为乐";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"卑鄙的我","score":0};
+            Allquestion[3]['ans'][1] = {"name":"蜡笔小新","score":10};
+            Allquestion[3]['ans'][2] = {"name":"火影忍者","score":0};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、七尺男惨遭毒手变侏儒，痴情女真情不变仍同居";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"名侦探柯南","score":10};
+            Allquestion[4]['ans'][1] = {"name":"死神","score":0};
+            Allquestion[4]['ans'][2] = {"name":"樱桃小丸子","score":0};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、销魂！庐山升龙霸，强奸雅典娜";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"进击的巨人","score":0};
+            Allquestion[5]['ans'][1] = {"name":"妖精的尾巴","score":0};
+            Allquestion[5]['ans'][2] = {"name":"圣斗士星矢","score":10};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、孩子脑积水，父亲脑萎缩，脑残父子猥琐生活";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"魔方大厦","score":0};
+            Allquestion[6]['ans'][1] = {"name":"大头儿子和小头爸爸","score":10};
+            Allquestion[6]['ans'][2] = {"name":"阿凡提的故事","score":0};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、自强不息！五指少年和蓝胖子的故事";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"机器猫","score":10};
+            Allquestion[7]['ans'][1] = {"name":"忍者神龟","score":0};
+            Allquestion[7]['ans'][2] = {"name":"怪物史莱克","score":0};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、亲生父母竟成禽兽，未成年少女被迫卖身洗浴中心";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"青春之旅","score":0};
+            Allquestion[8]['ans'][1] = {"name":"千与千寻","score":10};
+            Allquestion[8]['ans'][2] = {"name":"灌篮高手","score":0};
+            //问题10
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、性情各异，众不明生物丛林深处智斗变态老男";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"蓝精灵","score":10};
+            Allquestion[9]['ans'][1] = {"name":"喜羊羊与灰太狼","score":0};
+            Allquestion[9]['ans'][2] = {"name":"熊出没","score":0};
+            //问题11
+            Allquestion[10] = Array();
+            Allquestion[10]['tid'] = "11";
+            Allquestion[10]['title'] = "11、耸人听闻！近视少女人头分离！";
+            Allquestion[10]['ans'] = Array();
+            Allquestion[10]['ans'][0] = {"name":"死神来了","score":0};
+            Allquestion[10]['ans'][1] = {"name":"海的女儿","score":0};
+            Allquestion[10]['ans'][2] = {"name":"阿雷拉","score":10};
+            //问题12
+            Allquestion[11] = Array();
+            Allquestion[11]['tid'] = "12";
+            Allquestion[11]['title'] = "12、两少年人穷志不短，仅着内裤环游世界，还做某冰箱代言人";
+            Allquestion[11]['ans'] = Array();
+            Allquestion[11]['ans'][0] = {"name":"海尔兄弟","score":10};
+            Allquestion[11]['ans'][1] = {"name":"钢炼","score":0};
+            Allquestion[11]['ans'][2] = {"name":"舒克与贝塔","score":0};
+            //问题13
+            Allquestion[12] = Array();
+            Allquestion[12]['tid'] = "13";
+            Allquestion[12]['title'] = "13、反复变性为哪般？花季少男的辛酸史";
+            Allquestion[12]['ans'] = Array();
+            Allquestion[12]['ans'][0] = {"name":"奥特曼","score":0};
+            Allquestion[12]['ans'][1] = {"name":"乱马","score":10};
+            Allquestion[12]['ans'][2] = {"name":"黑子的篮球","score":0};
+            //问题14
+            Allquestion[13] = Array();
+            Allquestion[13]['tid'] = "14";
+            Allquestion[13]['title'] = "14、惊！恶母杀女未遂，奇！尸变终成眷侣";
+            Allquestion[13]['ans'] = Array();
+            Allquestion[13]['ans'][0] = {"name":"天使之羽","score":0};
+            Allquestion[13]['ans'][1] = {"name":"白雪公主","score":10};
+            Allquestion[13]['ans'][2] = {"name":"银魂","score":0};
+            //问题15
+            Allquestion[14] = Array();
+            Allquestion[14]['tid'] = "15";
+            Allquestion[14]['title'] = "15、剑指青天啊，未成年清纯女中学生上演人狗情未了";
+            Allquestion[14]['ans'] = Array();
+            Allquestion[14]['ans'][0] = {"name":"哪吒闹海","score":0};
+            Allquestion[14]['ans'][1] = {"name":"白雪公主","score":0};
+            Allquestion[14]['ans'][2] = {"name":"犬夜叉","score":10};
+            
+            
+            
+            var Allans = Array();
+            //答案A
+            Allans[0] = Array();
+            Allans[0]['tip'] = "A";
+            Allans[0]['title'] = "你还嫩点，禽兽不如";
+            Allans[0]['content'] = "你好清纯哦，继续看你的《樱桃小丸子》吧";
+            //答案B
+            Allans[1] = Array();
+            Allans[1]['tip'] = "B";
+            Allans[1]['title'] = "有点见识，堪称禽兽啊";
+            Allans[1]['content'] = "你还有得救，建议你多看看文艺片，远离烂片";
+            //答案C
+            Allans[2] = Array();
+            Allans[2]['tip'] = "C";
+            Allans[2]['title'] = "太牛逼了，比禽兽还禽兽";
+            Allans[2]['content'] = "你已经无药可救了，希望你远离电视，珍爱生命！";
+            
+            
+            $(function(){
+//                $.getJSON("http://115.29.231.215/index.php/Wap/Hdyue/getWelcomeNum",{diaoId:11},function(data){
+//                    if(data['info'] == "ok"){
+//                        var str = "总共有"+ data['data'] +"人测试过!!!";
+//                    }
+//                    $('#pNum').html(str);
+//                });
+            }); 
+           
+            function reloadme(){
+                location.reload();             
+            }
+            var myscore = 0;
+            function start(obj,id){
+                if(id == 0){
+                    $(obj).removeClass().addClass("btn btn-warning btn-lg btn-block");
+                    setTimeout(function(){nextQuestion(id,0)},500);
+                }             
+            }
+            
+            function selectMe(obj,score,id){
+                if(score == 10){ //正确答案
+                    $(obj).removeClass().addClass("btn btn-success btn-lg");  
+                }else{  //错误答案
+                    $(obj).removeClass().addClass("btn btn-danger btn-lg");
+                }
+                setTimeout(function(){nextQuestion(id,score)},500);
+            }
+            function nextQuestion(nowid,score){
+                myscore += score;
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid >= questionLeng){
+                    var anstr = '<table class="table"><tbody>';
+                    var resTitle = "测测你看过几部禽兽极禁片";
+                    var result = "你总共答对了：" + myscore/10 + "部";
+                    //                    for(var i=0;i<Allans.length;i++){
+                    //                        if(nowid == Allans[i]['tip']){
+                    //                            resTitle = Allans[i]['title'];
+                    //                            descok = Allans[i]['title'];
+                    //                            result = Allans[i]['content'];
+                    //                            break;
+                    //                        }
+                    //                    }
+                    var ansId = 0;
+                    if(myscore > 0 && myscore <=90){
+                        ansId = 0;
+                    }else if(myscore <=120){
+                        ansId = 1;
+                    }else if(myscore <=150){
+                        ansId = 2;
+                    }
+                    resTitle = Allans[ansId]['title'];
+                    result = Allans[ansId]['content'];
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary  btn-lg btn-block" onclick="show()">分享给好友</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success  btn-lg btn-block" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd">关注酷玩大学，大学不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-warning btn-lg btn-block" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">我还想玩其他好玩的</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center text-warning">你总共答对了:'+ myscore/10 +'部('+ resTitle +')</h4><strong>详细分析：</strong><h5>&nbsp;&nbsp;'+ result +'</h5>' + anstr;
+                }else{
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+                    var anstr = '<table class="table"><tbody>';
+                    anstr += '<tr class="warning"><td class="text-center"><div class="btn-group-vertical">';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        //                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "info";
+                                break;
+                        }
+                        
+                        anstr += '<button type="button" class="btn btn-default btn-lg active" onclick="selectMe(this,'+ Allquestion[nowid]['ans'][i]["score"] +','+ Allquestion[nowid]['tid'] +');">'+ Allquestion[nowid]['ans'][i]["name"] +'</button>';
+                    }
+                    anstr +=  '</div></td></tr></tbody></table>';
+                    question = '<br/><h4 id="'+ tid +'" class="text-center">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/diaocha1/share/110.jpg',
+                "link":'http://115.29.231.215/diaocha1/diaocha_11.html',
+                "desc":"我总共答对了"+ myscore/10 +"道题，你能比我禽兽么？测测你看过几部禽兽极禁片",
+                "title":"测测你看过几部禽兽极禁片"
+            };
+            function share(){
+                document.title = window.wxData.desc = "我总共答对了"+ myscore/10 +"道题，你能比我禽兽么？";
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+                share();//分享初始化
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        <!--        <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+                       <img src="pg_04.png" height="100%" width="100%"/>    
+                    </div>-->
+        <div class="head">
+            <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd"><img src="head.png"></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <table class="table">
+                        <tbody>
+                            <tr class=''><td class="text-center"><h3>测测你看过几部禽兽极禁片</h3></td></tr>
+                            <tr class=''>
+                                <td class="text-left">
+                                    <img width="100%" src="share/11.jpg">
+                                    <p class="text-warning">注意事项：<br/>&nbsp;&nbsp;不要再否认了，你偷偷看过这么多禁片，你爹娘造吗！</p>
+									<h5 id="pNum" class="text-danger text-center">&nbsp;</h5>
+                                </td>
+                            </tr>          
+                            <tr class=''><td class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" onclick="start(this,0)">&nbsp;&nbsp;&nbsp;点&nbsp;击&nbsp;开&nbsp;始&nbsp;&nbsp;&nbsp;</a></td></tr>
+                            <tr><td  class="text-center"><a type="button" class="btn btn-success btn-lg btn-block" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">&nbsp;更&nbsp;多&nbsp;测&nbsp;试&nbsp;</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="fade" class="black_overlay" onclick="hide()">
+            <img src="share.png" style="width:100%"/>
+        </div>
+    </body>
+</html>			

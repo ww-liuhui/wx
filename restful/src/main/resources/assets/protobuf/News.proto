@@ -1,0 +1,59 @@
+// 消息
+message News
+{
+    // ID
+    optional int32 id = 1;
+
+    // 发布时间:  (yyyy-MM-dd hh:mm:dd)
+    optional string issueTime = 3;
+
+    // 归类: 1=新闻; 2=热点; 3=推送; 4=本地; 5=市场; 6=政策; 7=法规; 8=专题; 9=评论; 98=推广; 99=其他; 0=待确定
+    // 主要归类
+    optional int32 type1 = 4 [default=0];
+    // 次要归类
+    optional int32 type2 = 5 [default=0];
+    // 备选归类
+    optional int32 type3 = 6 [default=0];
+
+
+    // 来源: (限制字数 <= 64)
+    optional string source = 10;
+    optional string sourceURL = 11;
+
+    // 作者: (限制字数 <= 64)
+    optional string author = 12 [default=""];
+    optional string authorURL = 13;
+
+
+    // 标题: (限制字数 <= 64)
+    optional string caption = 20 [default=""];
+
+    // 缩略图: (限制字数 <= 256)
+    optional string thumbURL = 21;
+
+    // 主配图: (限制字数 <= 256)
+    optional string figureURL = 22;
+
+    // 内容: (限制字数 <= 4096)
+    optional string content = 23 [default=""];
+
+    // 内容摘要: (限制字数 <= 200)
+    optional string description = 24 [default=""];
+
+    // 分享描述: (限制字数 <= 200)
+    optional string shareDesc = 25 [default=""];
+
+
+    // 相关标签清单
+    repeated int32 tagIds = 30 [packed=true];
+    // 相关主题清单
+    repeated int32 topicIds = 31 [packed=true];
+    // 相关新闻清单
+    repeated int32 relateIds = 32 [packed=true];
+
+    // 是否顶部轮播新闻   true:是，false：不是
+    optional bool rotate = 40 [default=false];
+
+    // 所属城市ID
+    optional int32 cityId = 41 [default=0];
+}

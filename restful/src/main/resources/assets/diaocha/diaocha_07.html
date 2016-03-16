@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2014年腾冲方言测试(笑死你)</title>
+        <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <!--        <link href="bootstrap.min.css" rel="stylesheet">
+                <script src="jquery.min.js"></script>
+                <script src="bootstrap.min.js"></script>-->
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            
+            var descok = "2014年腾冲方言测试(笑死你)";//分享内容
+            
+var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、 甲：我出克了，给消买么子来家？ <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙：买滴滴撒撇嘛。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问：乙让甲买什么东西回来？";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"A、洗涤用品","score":0};
+            Allquestion[0]['ans'][1] = {"name":"B、食品","score":10};
+            Allquestion[0]['ans'][2] = {"name":"C、一种衣服","score":0};
+            Allquestion[0]['ans'][3] = {"name":"D、酒","score":0};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、甲：召忽我叫瓦哥甩给你两巴坨吃吃！<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙：…… <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问：甲在对乙干什么？";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"A、感谢","score":0};
+            Allquestion[1]['ans'][1] = {"name":"B、鄙视","score":0};
+            Allquestion[1]['ans'][2] = {"name":"C、招待","score":0};
+            Allquestion[1]['ans'][3] = {"name":"D、威胁","score":10};
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、甲：鸡纵咋个卖？<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙：十五快，反都还不开的青鸡纵呢。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问：甲准备买的是？";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"A、鲜花","score":0};
+            Allquestion[2]['ans'][1] = {"name":"B、豆类","score":0};
+            Allquestion[2]['ans'][2] = {"name":"C、菌类","score":10};
+            Allquestion[2]['ans'][3] = {"name":"D、禽类","score":0};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、甲：砍靠？<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙：西练靠一向。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问：乙出去了多久？";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"A、一年","score":0};
+            Allquestion[3]['ans'][1] = {"name":"B、一段时间","score":10};
+            Allquestion[3]['ans'][2] = {"name":"C、一天","score":0};
+            Allquestion[3]['ans'][3] = {"name":"D、一会","score":0};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、甲：你说邱老师给折夺？<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙：折夺得很！<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问：甲和乙认为邱老师？";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"A、才华横溢","score":0};
+            Allquestion[4]['ans'][1] = {"name":"B、阴险狡诈","score":10};
+            Allquestion[4]['ans'][2] = {"name":"C、婆婆妈妈","score":0};
+            Allquestion[4]['ans'][3] = {"name":"D、和蔼可亲","score":0};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、甲：你啊 爷呢？<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙：的在毛丝呢窝着屎。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问：乙他爸爸干什么去了？";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"A、吃饭去了","score":0};
+            Allquestion[5]['ans'][1] = {"name":"B、在睡觉","score":0};
+            Allquestion[5]['ans'][2] = {"name":"C、上厕所了","score":10};
+            Allquestion[5]['ans'][3] = {"name":"D、挑粪去了","score":0};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、下列词语用法与其他三个不同的是？";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"A、西丫子","score":0};
+            Allquestion[6]['ans'][1] = {"name":"B、怂罐头","score":0};
+            Allquestion[6]['ans'][2] = {"name":"C、大滚锅","score":10};
+            Allquestion[6]['ans'][3] = {"name":"D、咚当宝","score":0};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、下列器官中与“连铁”属同一种的是的？";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"A、XXXXX","score":0};
+            Allquestion[7]['ans'][1] = {"name":"B、肾脏","score":0};
+            Allquestion[7]['ans'][2] = {"name":"C、胰脏","score":10};
+            Allquestion[7]['ans'][3] = {"name":"D、膀胱","score":0};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、“瓦那个娃娃是老火咯，一天家就晓得到处撒”中的“老火”是指？";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"A、调皮","score":0};
+            Allquestion[8]['ans'][1] = {"name":"B、乖","score":0};
+            Allquestion[8]['ans'][2] = {"name":"C、聪明","score":10};
+            Allquestion[8]['ans'][3] = {"name":"D、笨","score":0};
+            //问题10
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、 下列词语与“恶心”意思不同的是？";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"A、资腻","score":0};
+            Allquestion[9]['ans'][1] = {"name":"B、资火","score":0};
+            Allquestion[9]['ans'][2] = {"name":"C、心翻","score":10};
+            Allquestion[9]['ans'][3] = {"name":"D、心绞","score":0};
+            //问题11
+            Allquestion[10] = Array();
+            Allquestion[10]['tid'] = "11";
+            Allquestion[10]['title'] = "11、傣语“怀羔”是指？";
+            Allquestion[10]['ans'] = Array();
+            Allquestion[10]['ans'][0] = {"name":"A、你好","score":0};
+            Allquestion[10]['ans'][1] = {"name":"B、我爱你","score":0};
+            Allquestion[10]['ans'][2] = {"name":"C、男性生殖器  ","score":10};
+            Allquestion[10]['ans'][3] = {"name":"D、笨蛋","score":0};
+            //问题12
+            Allquestion[11] = Array();
+            Allquestion[11]['tid'] = "12";
+            Allquestion[11]['title'] = "12、“操”用做动词时的意思是？";
+            Allquestion[11]['ans'] = Array();
+            Allquestion[11]['ans'][0] = {"name":"A、夸赞 ","score":0};
+            Allquestion[11]['ans'][1] = {"name":"B、咒骂","score":10};
+            Allquestion[11]['ans'][2] = {"name":"C、XXOO","score":0};
+            Allquestion[11]['ans'][3] = {"name":"D、运动","score":0};
+            
+            
+            
+            var Allans = Array();
+            //答案A
+            Allans[0] = Array();
+            Allans[0]['tip'] = "A";
+            Allans[0]['title'] = "不及格";
+            Allans[0]['content'] = "建议你还是坐在电脑面前多看看腾冲的信息吧！！；<br/>&nbsp;&nbsp;在一个和漆妈姑呢晚上，憨头日脑呢你穿一件卢音杠瞎呢衣裳，鬼眯日眼呢站在大路该心呢，搭我鬼吼辣叫呢吼了一句日不笼耸呢话：“走，干饵丝克！”";
+            //答案B
+            Allans[1] = Array();
+            Allans[1]['tip'] = "B";
+            Allans[1]['title'] = "四级";
+            Allans[1]['content'] = "你可以在当地朋友的指导下勉强到腾冲各地走走；<br/>&nbsp;&nbsp;在一个和漆妈姑呢晚上，憨头日脑呢你穿一件卢音杠瞎呢衣裳，鬼眯日眼呢站在大路该心呢，搭我鬼吼辣叫呢吼了一句日不笼耸呢话：“走，干饵丝克！”";
+            //答案C
+            Allans[2] = Array();
+            Allans[2]['tip'] = "C";
+            Allans[2]['title'] = "六级";
+            Allans[2]['content'] = "你可以独自在腾冲潇洒了；<br/>&nbsp;&nbsp;在一个和漆妈姑呢晚上，憨头日脑呢你穿一件卢音杠瞎呢衣裳，鬼眯日眼呢站在大路该心呢，搭我鬼吼辣叫呢吼了一句日不笼耸呢话：“走，干饵丝克！”";
+            
+            
+            $(function(){
+                //                nextQuestion(0);
+            }); 
+           
+            function reloadme(){
+                location.reload();             
+            }
+            var myscore = 0;
+            function start(obj,id){
+                if(id == 0){
+                    $(obj).removeClass().addClass("btn btn-warning btn-lg btn-block");
+                    setTimeout(function(){nextQuestion(id,0)},500);
+                }             
+            }
+            
+            function selectMe(obj,score,id){
+                if(score == 10){ //正确答案
+                    $(obj).removeClass().addClass("btn btn-success btn-lg");  
+                }else{  //错误答案
+                    $(obj).removeClass().addClass("btn btn-danger btn-lg");
+                }
+                setTimeout(function(){nextQuestion(id,score)},500);
+            }
+            function nextQuestion(nowid,score){
+                myscore += score;
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid >= questionLeng){
+                    var anstr = '<table class="table"><tbody>';
+                    var resTitle = "2014年腾冲话专业六级考试";
+                    var result = "你的得分：" + myscore;
+                    //                    for(var i=0;i<Allans.length;i++){
+                    //                        if(nowid == Allans[i]['tip']){
+                    //                            resTitle = Allans[i]['title'];
+                    //                            descok = Allans[i]['title'];
+                    //                            result = Allans[i]['content'];
+                    //                            break;
+                    //                        }
+                    //                    }
+                    var ansId = 0;
+                    if(myscore > 0 && myscore <=70){
+                        ansId = 0;
+                    }else if(myscore <=100){
+                        ansId = 1;
+                    }else if(myscore <=130){
+                        ansId = 2;
+                    }
+                    resTitle = Allans[ansId]['title'];
+                    result = Allans[ansId]['content'];
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary  btn-lg btn-block" onclick="show()">分享给好友</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success  btn-lg btn-block" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd">关注酷玩大学，大学不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-warning btn-lg btn-block" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">我还想玩其他好玩的</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center text-warning">你的得分为:'+ myscore +'('+ resTitle +')</h4><strong>详细分析：</strong><h5>&nbsp;&nbsp;'+ result +'</h5>' + anstr;
+                }else{
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+                    var anstr = '<table class="table"><tbody>';
+                    anstr += '<tr class="warning"><td class="text-center"><div class="btn-group-vertical">';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        //                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "info";
+                                break;
+                        }
+                        
+                        anstr += '<button type="button" class="btn btn-default btn-lg active" onclick="selectMe(this,'+ Allquestion[nowid]['ans'][i]["score"] +','+ Allquestion[nowid]['tid'] +');">'+ Allquestion[nowid]['ans'][i]["name"] +'</button>';
+                    }
+                    anstr +=  '</div></td></tr></tbody></table>';
+                    question = '<h5 class="text-center text-warning">你的得分为:'+ myscore +'</h5>'+'<h4 id="'+ tid +'" class="text-left">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/diaocha1/share/04.jpg',
+                "link":'http://115.29.231.215/diaocha1/diaocha_07.html',
+                "desc":"我在腾冲话六级考试中得到了"+ myscore +"分，你能超过我么？2014腾冲话六级考试",
+                "title":"2014年腾冲方言测试(笑死你)"
+            };
+            function share(){
+                document.title = window.wxData.desc = "我在腾冲话六级考试中得到了"+ myscore +"分，你能超过我么？2014腾冲话六级考试";
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+                share();//分享初始化
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        <!--        <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+                       <img src="pg_04.png" height="100%" width="100%"/>    
+                    </div>-->
+        <div class="head">
+            <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd"><img src="head.png"></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <table class="table">
+                        <tbody>
+                            <tr class=''><td class="text-center"><h3>2014年腾冲话专业六级考试</h3></td></tr>
+                            <tr class=''><td class="text-left"><p class="text-warning">注意事项：<br/>
+                                        1、本次考试时间为5分钟。考生应在规定时间内完成题目，不得拖延时间。<br/>
+                                        2、仔细阅读题目说明，本次考试所有选择题都是单选，多选、错选均不得分。<br/> 
+                                        3、 严格遵守考场秩序，独立完成考试内容。</p></td></tr>
+                            <tr class=''><td class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" onclick="start(this,0)">&nbsp;&nbsp;&nbsp;开&nbsp;始&nbsp;考&nbsp;试&nbsp;&nbsp;&nbsp;</a></td></tr>
+                            <tr><td  class="text-center"><a type="button" class="btn btn-success btn-lg btn-block" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">&nbsp;更&nbsp;多&nbsp;测&nbsp;试&nbsp;</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="fade" class="black_overlay" onclick="hide()">
+            <img src="share.png" style="width:100%"/>
+        </div>
+    </body>
+</html>			

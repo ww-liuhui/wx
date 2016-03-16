@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>你的爱情年龄是多大？</title>
+           <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+           <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+           <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!--        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>-->
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            
+            var descok = "想知道你的爱情年龄有多大么？";//分享内容
+            
+            var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、如果朋友临时取消约会，你会怎么安排自己的时间？";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"去逛逛早就想逛的地方","score":5};
+            Allquestion[0]['ans'][1] = {"name":"赶快打电话找别的朋友出来","score":3};
+            Allquestion[0]['ans'][2] = {"name":"无所事事，心情很闷地到处乱晃","score":1};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、在网上的聊天室遇到陌生人跟你搭讪，你会作何处理？";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"先试着聊天看看，如果还不错就留下E-mail","score":3};
+            Allquestion[1]['ans'][1] = {"name":"保持暧昧空间地跟对方谈话","score":5};
+            Allquestion[1]['ans'][2] = {"name":"立刻跑掉或是完全不回应他","score":1};
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、如果你收到情人送你的戒指，你会戴在哪只手指上呢？";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"中指","score":1};
+            Allquestion[2]['ans'][1] = {"name":"无名指","score":5};
+            Allquestion[2]['ans'][2] = {"name":"小指","score":3};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、若是情人讨厌你的某位朋友，你会……";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"从此跟那位朋友断绝关系","score":1};
+            Allquestion[3]['ans'][1] = {"name":"瞒着情人跟那位朋友联络","score":3};
+            Allquestion[3]['ans'][2] = {"name":"完全不理情人的抱怨","score":5};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、当情人要求你当街亲吻他，你会……";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"拥吻有何不可？立刻热烈地回应","score":1};
+            Allquestion[4]['ans'][1] = {"name":"表示自己会害羞，亲吻对方的脸颊或手作为让步","score":5};
+            Allquestion[4]['ans'][2] = {"name":"断然拒绝","score":3};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、白雪公主的故事中，你最喜欢哪一幕？";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"白雪公主在小矮人家睡着","score":3};
+            Allquestion[5]['ans'][1] = {"name":"小矮人们为公主制作玻璃棺","score":5};
+            Allquestion[5]['ans'][2] = {"name":"王子扶起公主使毒苹果掉出，而公主醒来","score":1};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、一出演出夫妻外遇的连续剧，你最容易认同那个角色？";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"外遇的一方","score":5};
+            Allquestion[6]['ans'][1] = {"name":"苦情守候的一方","score":1};
+            Allquestion[6]['ans'][2] = {"name":"第三者","score":3};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、你看到路边有个人一边等候一边不停的看表，你认为他是？";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"跟情人约会，但对方迟到了","score":1};
+            Allquestion[7]['ans'][1] = {"name":"等公车，车再不来他就会迟到","score":3};
+            Allquestion[7]['ans'][2] = {"name":"朋友或情人进银行去办事，他在等对方何时才把事情忙完","score":5};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、你和情人约在一家新餐厅共进晚餐，你会挑选哪个座位？";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"窗边的座位","score":1};
+            Allquestion[8]['ans'][1] = {"name":"最能欣赏到钢琴演奏的位置","score":5};
+            Allquestion[8]['ans'][2] = {"name":"最角落的位置","score":3};
+            //问题10
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、你走过一家店，传来一阵香味，你觉得那是？";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"刚烤好的面包香","score":3};
+            Allquestion[9]['ans'][1] = {"name":"带有果香味的香水","score":5};
+            Allquestion[9]['ans'][2] = {"name":"咖啡香","score":1};
+            //问题11
+            Allquestion[10] = Array();
+            Allquestion[10]['tid'] = "11";
+            Allquestion[10]['title'] = "11、你看到两个人正在说悄悄话，你觉得听的那个人会有何反应？";
+            Allquestion[10]['ans'] = Array();
+            Allquestion[10]['ans'][0] = {"name":"皱着眉头不说话","score":5};
+            Allquestion[10]['ans'][1] = {"name":"强力忍着笑意","score":3};
+            Allquestion[10]['ans'][2] = {"name":"到处东张西望","score":1};
+            //问题12
+            Allquestion[11] = Array();
+            Allquestion[11]['tid'] = "12";
+            Allquestion[11]['title'] = "12、如果你可以选择一个梦境，你会选择什么样的梦？";
+            Allquestion[11]['ans'] = Array();
+            Allquestion[11]['ans'][0] = {"name":"梦到自己是个万人迷，每个认识的人都想向自己表示爱意","score":3};
+            Allquestion[11]['ans'][1] = {"name":"梦中自己是个亿万富翁，能够呼风唤雨","score":5};
+            Allquestion[11]['ans'][2] = {"name":"梦见自己是个平凡的人，有平凡的家庭，一家人和乐融融","score":1};
+             //问题13
+            Allquestion[12] = Array();
+            Allquestion[12]['tid'] = "13";
+            Allquestion[12]['title'] = "13、你将在三个你喜欢的对象中挑选一位交往，但她（他）们各有缺点，你会选择谁？";
+            Allquestion[12]['ans'] = Array();
+            Allquestion[12]['ans'][0] = {"name":"样样都好，就是非常穷","score":1};
+            Allquestion[12]['ans'][1] = {"name":"有钱、体贴、风趣、年轻，但是很花心","score":3};
+            Allquestion[12]['ans'][2] = {"name":"平凡却老实，有点年纪","score":5};
+             //问题14
+            Allquestion[13] = Array();
+            Allquestion[13]['tid'] = "14";
+            Allquestion[13]['title'] = "14、你打翻了一个杯子，你觉得里面装的是？";
+            Allquestion[13]['ans'] = Array();
+            Allquestion[13]['ans'][0] = {"name":"葡萄酒","score":1};
+            Allquestion[13]['ans'][1] = {"name":"满满的白开水","score":5};
+            Allquestion[13]['ans'][2] = {"name":"空的","score":3};
+             //问题15
+            Allquestion[14] = Array();
+            Allquestion[14]['tid'] = "15";
+            Allquestion[14]['title'] = "15、你睡得正熟时，突然地震了，你的第一个反应是？";
+            Allquestion[14]['ans'] = Array();
+            Allquestion[14]['ans'][0] = {"name":"赶快找个地方躲","score":3};
+            Allquestion[14]['ans'][1] = {"name":"赶快逃出去","score":1};
+            Allquestion[14]['ans'][2] = {"name":"先继续睡，如果摇得厉害再作反应","score":5};
+            
+            
+            
+            var Allans = Array();
+            //答案A
+            Allans[0] = Array();
+            Allans[0]['tip'] = "A";
+            Allans[0]['title'] = "◇１５～２２";
+            Allans[0]['content'] = "我猜你自己不会承认，不过，你确实还处在爱情的青少年期，不论你现在已经几岁了。你大概是爱情小说或连续剧的忠实读者，面对爱情真正的困境处理起来非常生涩。如果你遇到一个爱情老手，你可能总是摸不透他的心意；甚至觉得对方忽冷忽热。不过，那其实只是你欠缺经验而已。如果你跟一个爱情年纪与你相仿的人恋爱，你们大概可以共享轰轰烈烈的爱情。无论如何，如果你的爱情并不顺遂，也无须灰心；更不必觉得这是我一生的最爱，因为，再多谈几次恋爱你就会发现，现在的你，实在是太年轻、太容易感伤了！";
+            //答案B
+            Allans[1] = Array();
+            Allans[1]['tip'] = "B";
+            Allans[1]['title'] = "◇２３～３６";
+            Allans[1]['content'] = "你的爱情大概是２０－２９岁的年纪，青春正好，有冲劲，也比较懂得进退。不过，你最常犯的毛病是高估自己；以为自己可以不嫉妒；以为自己想要的是自由……正确地说，你还不够了解自己爱情的长相，还需要一点历练来使你的爱情发光。你很容易被为你倾倒的爱情青少年所吸引，他们以你为生活重心的虚荣感使你飘飘欲仙。但是，你可得记住，你也没你自己想像中那么有办法，一起成长当然是好的，千万不要悲剧英雄似地自己一肩扛下所有情绪重担，到时候，你可能反而是最先逃跑的人。";
+            //答案C
+            Allans[2] = Array();
+            Allans[2]['tip'] = "C";
+            Allans[2]['title'] = "◇３７～４４";
+            Allans[2]['content'] = "你的爱情年纪已经进入成熟期，就像人说：「三十而立。」你开始有种老灵魂的感叹，认为自己可以把爱情的分寸拿捏得当，却无法像年轻时那么尽兴地相爱。你偶尔会感到疲倦，有时会有些寂寞，虽然你都可以很快把它们处理好，但是心里还是有个遗憾很难被弭平。你跟爱情年纪比你小的人交往，总是从他们身上感受到年轻的魅力，却也经常冷眼旁观他们爱情岁月的增长。你大概只能在爱情比你年长的人身上找到安慰，虽然你不见得会爱上对方。不过，有的时候别放弃给自己年轻一下的机会，毕竟就算是老年期的河川，也有回春的机会啊！";
+            //答案D
+            Allans[3] = Array();
+            Allans[3]['tip'] = "D";
+            Allans[3]['title'] = "◇４５～６５";
+            Allans[3]['content'] = "你的爱情，不但成熟，而且沈淀。有种境界叫：「见山又是山，见水又是水。」你大概就是如此吧！你终于可以很温柔地看待不同爱情阶段的人，并且可以很温柔的陪伴和对待对方，你不企求长相斯守的承诺，因为你深知其中难处；你不会残忍地打破爱情中年轻人的梦想，你只会微笑地等他看见当中的青涩。如果，有个人能真正地爱到你，也真正被你所爱，那么一定是件幸福的事；不，不止是幸福，应该说，这才是最浪漫的事。";
+            
+            
+            $(function(){
+                //                nextQuestion(0);
+            }); 
+           
+            function reloadme(){
+                location.reload();             
+            }
+           
+            function start(obj,id){
+                if(id == 0){
+                    $(obj).removeClass().addClass("img-thumbnail");
+                    setTimeout(function(){nextQuestion(id,0)},500);
+                }             
+            }
+            var myscore = 0;
+            function selectMe(obj,id,score){
+                $(obj).parent().removeClass().addClass("danger");
+                setTimeout(function(){nextQuestion(id,score)},500);
+            }
+            function nextQuestion(nowid,score){
+                myscore += score;
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid >= questionLeng){
+                    var anstr = '<table class="table"><tbody>';
+                    
+                    var resTitle = "测试结果为:";
+                    var result = "";
+                    
+                    var ansId = 0;
+                    if(myscore <= 22 ){
+                        ansId = 0;
+                    }else if(myscore <= 36){
+                        ansId = 1;
+                    }else if(myscore <= 44){
+                        ansId = 2;
+                    }else if(myscore <= 65){
+                        ansId = 3;
+                    }
+                    resTitle = "你的爱情年龄为:" + Allans[ansId]['title'];
+                    descok = Allans[ansId]['title'];
+                    result = Allans[ansId]['content'];
+                    
+                    
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary btn-lg btn-block" onclick="show()">晒一晒你的爱情年龄</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success btn-lg btn-block" target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd">关注酷玩大学，大学不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-success btn-lg btn-block" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" target="_blank" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">更多测试</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center">'+ resTitle +'</h4><h5 class="text-center">'+ result +'</h5>' + anstr;
+                }else{
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+           
+                    var anstr = '<table class="table"><tbody>';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        //                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "info";
+                                break;
+                        }
+                        anstr += '<tr class='+ className +'><td class="text-center" onclick="selectMe(this,'+ Allquestion[nowid]['tid'] +','+ Allquestion[nowid]['ans'][i]["score"] +');">'+ Allquestion[nowid]['ans'][i]["name"] +'</td></tr>';
+                    }
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 id="'+ tid +'" class="text-center">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/diaocha1/share/02.jpg',
+                "link":'http://115.29.231.215/diaocha1/diaocha_08.html',
+                "desc":"想知道你的爱情年龄有多大么？",
+                "title":"你的爱情年龄是多大？"
+            };
+            function share(){
+                document.title = window.wxData.desc = window.wxData.title + "<br/>经过测试,我的爱情年龄是：" + descok ;
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+                share();//分享初始化
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd"><img src="head.png"></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <br/>
+                <div class="span12">
+                    <table class="table">
+					    <caption>
+						    <p class="text-center text-primary">你的爱情年龄是多大？我们常听人家说：年龄不是问题。但这指的是实际的年龄。我们经常忽略的，其实是爱情本身的年纪。20岁的人，爱情年纪可能只有15岁，也可能已经35岁了。知道彼此的爱情年龄，会让我们更懂得如何彼此对待。</p>
+                            <p id="backTime" class="text-danger text-center">选择性别开始测试咯~</p>
+                        </caption>
+                        <tbody>
+						     <tr>
+                                <td><p class="text-center text-primary"><img class="img-rounded" src="head_01.png" width="80%" onclick="start(this,0)"><br/>boy</p></td>
+                                <td><p class="text-center text-danger"><img class="img-rounded" src="head_02.png" width="80%" onclick="start(this,0)"><br/>girl</p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+						<p class="text-center"><a type="button" class="btn btn-success text-center btn-lg btn-block" target="_blank"href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">更多测试</a></p>
+                           </div>
+                         </div>
+                      </div>
+
+                                        <div id="fade" class="black_overlay" onclick="hide()">
+                                            <img src="share.png" style="width:100%"/>
+                                        </div>
+                                        </body>
+                                        </html>			

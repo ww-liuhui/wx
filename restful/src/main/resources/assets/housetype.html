@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <title id="title">为屋-户型详情</title>
+    <script>
+        var host = window.location.host;
+        //var host = "localhost:8011";
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/wxoauth.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/bootstarap.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/slick.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/core.css?3432" media="all">
+    <link rel="stylesheet" type="text/css" href="css/blueimp-gallery.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/main.css?9622" media="all">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+
+<div style="display: none"><script src="http://s95.cnzz.com/z_stat.php?id=1256849041&web_id=1256849041" language="JavaScript"></script></div>
+<div id="jiejing" style="display: none;"></div>
+<div class="wrapper" id="main">
+
+    <header class="header">
+        <div class="header-inner" align="center">
+            <a class="btn find-house" href="list.html" target="_blank" style="display: none" id="home">首页</a>
+            <!--<a class="btn streetscape" id="streetscape" target="_blank" href="#" onclick="alert('暂无街景');return false;">-->
+            <!--<span class="glyphicon glyphicon-eye-open" aria-hidden="true"style="color:white;"></span>-->
+            <!--街景-->
+            <!--</a>-->
+            <div align="center" class="head-gname" id="symbol"></div>
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <div class="img-menu">
+        <div class="fixed-margin-top"></div>
+        <section class="section galley no-border-top no-border-bottom" id="img_list">
+        </section>
+        <div align="center">
+            <div class="current_sc">
+                <span class="current_span">1</span>/<span class="total_span">1</span>
+            </div>
+        </div>
+        <div id="blueimp-image-carousel"></div>
+        <div id="blueimp-gallery" class="blueimp-gallery">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <!--<a class="prev">‹</a>-->
+            <!--<a class="next">›</a>-->
+            <!--<a class="close">×</a>-->
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+        </div>
+
+        <div style="padding-top: 8px;">
+            <div class="detail-menu" id="menu">
+                <span class="ht-column active" id="detail-menu">详情</span>
+                <span class="ht-column" id="housetype-menu">其他</span>
+                <span class="ht-column" id="member-menu">帮客</span>
+                <span class="ht-column" id="comment-menu">点评</span>
+            </div>
+        </div>
+    </div>
+    <div id="place_height"></div>
+
+    <section class="section no-border-top" id="detail-menu-1" style="-webkit-overflow-scrolling:touch;overflow-y:scroll;">
+        <div class="bar-top">
+            <!--<h3 class="title">周边配套</h3>-->
+            <div class="clearfix"></div>
+        </div>
+        <div class="lp-info">
+            <div class="lp-price" align="left">
+                <span class="unit">¥ </span> <span class="number" id="housePrice"></span><span class="unit"> 万元起</span>
+                <span class="pm">首付：</span><span class="pm" id="ht_pm1"></span><span class="pm" id="ht_pm2"></span>
+            </div>
+            <div align="right"style="margin-top: -30px;">
+                <a style="margin-right: 16px;" href="http://m.db.house.qq.com/index.php?mod=calculator&type=sd&rf=">
+                    <img src="img/jsq.png" style="width: 30px;height: 30px;"/>
+                </a>
+            </div>
+            <div style="font-size: small;" id="info">
+            </div>
+            <div class="marks" id="mark_list">
+            </div>
+            <div style="height: 6px;"></div>
+        </div>
+        <section>
+            <ul class="list-main">
+                <li class="list-item section-loupan">
+                    <a href='' class="item-link">
+                        <img src="img/sale.png"
+                             class="img-sale">
+
+                        <div class="sale-div">
+                            <div class="text-sale">优惠活动</div>
+                            <div><span class="text-sale-detail" id="preferential"></span></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <div style="border-bottom: 1px solid #D8D8D8">
+        </div>
+        <ul class="list-main">
+            <li class="list-item">
+                <div class="clearfix">
+                    <div class="col-xs-6">
+                        <div class="label-left">楼盘：</div>
+                        <div class="content-right" id="gname"></div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="label-left">户型：</div>
+                        <div class="content-right" id="ht_name"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="clearfix">
+                    <div class="col-xs-6">
+                        <div class="label-left">价格：</div>
+                        <div class="content-right" id="ht_price"></div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="label-left">总套：</div>
+                        <div class="content-right" id="ht_inSalesVolume"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="clearfix">
+                    <div class="col-xs-6">
+                        <div class="label-left">面积：</div>
+                        <div class="content-right" id="ht_area"></div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="label-left">朝向：</div>
+                        <div class="content-right" id="ht_toward"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="clearfix">
+                    <div class="col-xs-6">
+                        <div class="label-left">层高：</div>
+                        <div class="content-right" id="ht_layerHigh"></div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="label-left">梯户：</div>
+                        <div class="content-right" id="ht_ladderHousehold"></div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+        <div id="ht_hf_detail" style="display: none;">
+            <div style="border-bottom: 1px solid #D8D8D8"></div>
+            <div class="bar-top">
+                <h3 class="title">户型特色</h3>
+
+                <div class="clearfix"></div>
+            </div>
+            <ul class="list-main" id="ht_hf_list">
+            </ul>
+        </div>
+    </section>
+
+    <section class="section sec-002" id="housetype-menu-1" style="display: none;-webkit-overflow-scrolling:touch;overflow-y:scroll;">
+        <div class="bar-top">
+            <!--<h3 class="title">主力户型</h3>-->
+
+            <div class="clearfix"></div>
+        </div>
+        <div style="height: 8px;"></div>
+        <ul class="list-main" id="ht_list">
+            <!--<li class="list-item section-loupan" id="">-->
+            <!--<a href='http://m.fangdd.com/nh/h5/flat/detail?id=102996' class="item-link">-->
+            <!--<img src="http://fs.fangdd.com/thumb/180x/000/007/731/6vEmr2rMFZeCsn46nyCYZfq0Xxc.jpg"-->
+            <!--class="layout-img">-->
+
+            <!--<div class="right">-->
+            <!--<div class="price">28万起</div>-->
+            <!--<div class="text-1">三室两厅两卫</div>-->
+            <!--<div><span class="text-2">大户型    双阳台 </span></div>-->
+            <!--<div class="marks">-->
+            <!--<span class="btn mark-blue">精装修</span>-->
+            <!--<span class="btn mark-green">学区房</span>-->
+            <!--<span class="btn mark-red">大学城</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="clearfix"></div>-->
+            <!--</a>-->
+            <!--</li>-->
+
+        </ul>
+    </section>
+
+    <section class="section sec-002" id="member-menu-1" style="display: none;-webkit-overflow-scrolling:touch;overflow-y:scroll;">
+        <div class="bar-top">
+            <!--<h3 class="title">帮客</h3>-->
+
+            <div class="clearfix"></div>
+        </div>
+        <div style="height: 8px;"></div>
+        <ul class="list-main" id="broker_list">
+            <!--<li class="list-item section-loupan">-->
+            <!--<a href='' class="item-link" style="float:left;">-->
+            <!--<img src="img/logo.png"-->
+            <!--class="img-head">-->
+
+            <!--<div class="info">-->
+            <!--<div class="name">风清扬-->
+            <!--&lt;!&ndash;<span class="fuwu">最近服务：<span class="fuwu-num">9</span>人</span>&ndash;&gt;</div>-->
+            <!--<div class="rate"><span>好评率：</span><span>99% </span></div>-->
+            <!--</div>-->
+            <!--<div class="clearfix"></div>-->
+            <!--</a>-->
+
+            <!--<div style="float: right;margin-right: 6px"><img src="img/icon_telephone.png"></div>-->
+            <!--</li>-->
+
+        </ul>
+    </section>
+
+    <section class="section sec-002" id="comment-menu-1" style="display: none;-webkit-overflow-scrolling:touch;overflow-y:scroll;">
+        <div class="bar-top">
+            <div class="clearfix"></div>
+        </div>
+        <ul class="list-main" id="comment_list" style="padding:12px;">
+            <!--<li class="list-item section-loupan">-->
+            <!--<div href="" class="item-link">-->
+            <!--<div class="info" style="margin-left: 4px;line-height: 2;width: 100%;">-->
+            <!--<img src="img/logo.png" class="img-head" style="margin-right: 10px;margin-top: 6px;">-->
+            <!--<div class="name">大灰<span class="comment-time">2015-11-11 11:11:11</span></div>-->
+            <!--<div class="comment">-->
+            <!--<span>-->
+            <!--房子不错，特别是他们家的帮客，服务真心好。推荐，推荐，推荐。-->
+            <!--</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="clearfix"></div>-->
+            <!--</div>-->
+            <!--</li>-->
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        var require;
+
+        (function () {
+            require = {
+                paths: {
+                    "jquery": "js/jquery-1.8.0.min.js",
+                    "slick": "js/housetype/slick.js",
+                    "storageapi": "js/jquery.storageapi.js",
+
+                    "jquery.blueimp-gallery": "js/jquery.blueimp-gallery.js",
+                    "blueimp-gallery": "js/blueimp-gallery.js",
+                    "blueimp-helper": "js/blueimp-helper.js",
+
+                    "project-housetype": "js/housetype/project-housetype.js",
+                }
+            };
+            //requirejs paths不可以有.js后缀
+            for (var i in require.paths) {
+                var path = require.paths[i];
+                require.paths[i] = path.replace(/\.js$/, '');
+            }
+        })();
+    </script>
+
+    <script type="text/javascript" src="js/require.js" data-main="project-housetype"></script>
+
+    <footer class="footer" style="display: none;">
+        <div class="foot" align="center">
+            <span>免费获取更好体验，更多服务</span>
+            <a class="btn btn-xs" style="margin-left: 20px;border-color: white;color: white;" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.weiwuu.fairy">
+                下载APP
+            </a>
+        </div>
+        <div align="center" style="margin-bottom: 20px;">
+            <section id="96weixinew0814011" class="wxqq-borderTopColor" style="border-style: none; width: 320px; clear: both; overflow: hidden;margin: 0 auto;" data-width="320px">
+                <section style="width: 100%; float: left; padding: 0 0.1em 0 0;" data-width="100%">
+                    <img style="width: 295px; height: auto !important;" src="https://mmbiz.qlogo.cn/mmbiz/iaGswicCbWm6ibZNRFa5gwkXz2ER9YzWRLppQA0Fz6sz9GRDm42WlB9XaWZnKzKHWACD3z65YNZSvNnIcnlLR7Dbg/0?wx_fmt=gif" width="295" data-width="319px" height="164"/>
+                    <section style="padding:0.5em 1.3em;float: left;font-size: 14px; margin-top: -10.5em;margin-left:0.2em;text-align: center; color: #fff; opacity: 0.95; background-color: abg(255,255,255);">
+                        <img src="img/qr.jpg" width="125" height="125" style="width: 125px; height: 125px;" data-width="130px"/>
+                    </section>
+                </section>
+            </section>
+        </div>
+        北京为屋得新提供技术支持
+    </footer>
+
+</div>
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

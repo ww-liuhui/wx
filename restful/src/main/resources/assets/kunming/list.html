@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>为屋帮帮-我要找房-昆明</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="list/css/list.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="imagemode" content="force">
+    <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" type="image/x-icon" href="http://wx.weiwuu.com/wx/img/favicon.ico">
+    <meta name="keywords" content="为屋帮帮、免费看房、专车看房">
+    <meta name="description" content="昆明为屋帮帮为您提供昆明最新新楼盘、昆明开盘楼盘、在售楼盘、新房报价等信息查询和免费咨询、免费看房、专车看房，让您快捷的找到新房楼盘，更多昆明新房楼盘信息就在昆明为屋帮帮。">
+    <script type="application/javascript">
+        var host = window.location.host;
+        //var host = "localhost:8011";
+    </script>
+</head>
+<body>
+<div class="xf-head" id="top">
+    <div class="minwrap clearfix">
+        <div class="lf-nav">
+            <a class="logo" href="index.html"style="margin-top:10px;">
+                <img width="102" src="images/logo.png" alt="帮帮">
+            </a>
+            <div class="change-city">
+                <a class="current" href="/kunming">昆明</a>
+                <div class="city-wrap">
+                    <div class="city-list">
+                        <dl class="clearfix">
+                            <dt>热门城市</dt>
+                            <dd>
+                                <a href="/beijing">北京</a>
+                                <a href="/kunming">昆明</a>
+                                <a href="/changsha">长沙</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rt-nav">
+            <a href="index.html" target="_blank">首页</a>
+            <a class="on" href="#" target="_blank">找房</a>
+            <a rel="nofollow" href="connect.html" target="_blank">联系我们</a>
+            <a rel="nofollow" href="app.html" target="_blank">APP</a>
+        </div>
+    </div>
+</div>
+<div class="list-top">
+    <div class="minwrap">
+        <div class="search-box">
+            <!--<form action="" id="searchForm">-->
+                <div class="inpbox">
+                    <span class="search-ico">搜索</span>
+                    <input id="keyword" class="inp" type="search"
+                           placeholder="请输入楼盘名"
+                            >
+                    <!-- 相关楼盘 -->
+                    <div class="search-result hide" id="suggestResult"></div>
+                </div>
+                <button class="search-btn" id="search">搜索</button>
+            <!--</form>-->
+        </div>
+    </div>
+</div><div class="list-main" id="list-main">
+    <div class="minwrap">
+        <div class="list-type">
+            <div class="belong">
+                <a target="_blank" href="http://www.fangdd.com">帮帮</a> &gt;
+                <a href="/kunming">昆明新房</a>
+            </div>
+            <ul class="type" id="filterUL">
+                <li>
+                    <span class="item">区域：</span>
+                    <div class="classify" event-track data-event-label="标签筛选-区域" id="districtList">
+                    </div>
+                </li>
+                <li>
+                    <span class="item">户型：</span>
+                    <div class="classify" event-track data-event-label="标签筛选-户型" id="houseTypeList">
+                    </div>
+                </li>
+                <li>
+                    <span class="item" >价格：</span>
+                    <div class="classify" event-track data-event-label="标签筛选-价格" id="priceRangeList">
+                    </div>
+                </li>
+                <li>
+                    <span class="item">标签：</span>
+                    <div class="classify" event-track data-event-label="标签筛选-标签" id="markList">
+                    </div>
+                </li>
+            </ul>
+            <div class="chose hide" id="filterSelected"></div>
+        </div>    <div class="list-cont clearfix">
+        <div class="list-all" id="allList">
+            <div class="top-title clearfix">
+                <div class="house-rank">
+                    <div class="house-item">
+                        <a href="/kunming" class="etrace on" rel="index" data-trace-t="全部楼盘">全部楼盘
+                            <span id="gardenNum"></span></a>
+                        <!--<a href="/kunming/loupan/g1" class="etrace " rel="nofollow" data-trace-t="优惠楼盘">优惠楼盘(3)</a>-->
+                        <!--<a href="/kunming/loupan/g2" class="etrace " rel="nofollow" data-trace-t="新盘推荐">新盘推荐(1)</a>-->
+                    </div>
+                    <!--<ul class="rank">-->
+                        <!--<li class="on default"><span>默认排序</span></li>-->
+                        <!--<li class="more">-->
+                            <!--<span>开盘时间顺序</span>-->
+                            <!--<div class="unflod">-->
+                                <!--<a rel="nofollow" href="/kunming/loupan/s4" class="etrace" data-trace-t="开盘时间排序">开盘时间顺序</a>-->
+                                <!--<a rel="nofollow" href="/kunming/loupan/s3" class="etrace" data-trace-t="开盘时间排序">开盘时间倒序</a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li class="more">-->
+                            <!--<span>均价由低到高</span>-->
+                            <!--<div class="unflod">-->
+                                <!--<a rel="nofollow" href="/kunming/loupan/s1" class="etrace" data-trace-t="价格排序">均价由低到高</a>-->
+                                <!--<a rel="nofollow" href="/kunming/loupan/s2" class="etrace" data-trace-t="价格排序">均价由高到低</a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                </div>
+            </div>
+            <ul class="house-list" id="gardenlist">
+            </ul>
+            <div>
+                <div class="posts-nav-wrap">
+                    <ul class="posts-nav">
+                        <li class='previous' style="display:none; " id="previous"><a class='previous'>←</a></li>
+                        <li class='next' id="next"><a class='next'>←</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+          </div>
+</div>
+<div class="xf-foot">
+    <div class="minwrap">
+        <div class="clearfix">
+            <dl>
+                <dt>关于我们</dt>
+                <dd><a rel="nofollow" href="about">了解帮帮</a></dd>
+                <dd><a rel="nofollow" href="join">加入帮帮</a></dd>
+                <dd><a rel="nofollow" href="contact">联系我们</a></dd>
+            </dl>
+            <dl>
+                <dt>服务支持</dt>
+                <dd><a rel="nofollow" href="service">服务声明</a></dd>
+                <dd><a rel="nofollow" href="questions">常见问题</a></dd>
+            </dl>
+            <dl>
+                <dt>联系我们</dt>
+                <dd>邮箱：weiwuu@weiwuu.com</dd>
+                <dd>服务热线：400-139-1359</dd>
+            </dl>
+            <dl class="cord">
+                <dt>
+                    <img width="99" height="99" src="images/wxqr.jpg" alt="">
+                </dt>
+                <dd>扫一扫加微信</dd>
+            </dl>
+            <dl class="cord">
+                <dt>
+                    <img width="99" height="99" src="images/appqr.png" alt="">
+                </dt>
+                <dd>扫一扫下APP</dd>
+            </dl>
+        </div>
+        <p class="copyright">copyright © 2015-2016 www.weiwuu.com All Rights Reserved</p>
+    </div>
+</div>
+<!-- 返回按钮 -->
+<div class="xf-aside" id="popupAside">
+    <div class="column">
+        <a class="call">
+            <div class="msg"><span class="number">客服热线：<span class="mcolor">400-139-1359</span></span></div>
+        </a>
+        <a class="return" href="#top">
+            <span class="msg">返回顶部</span>
+        </a>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="list/js/list.js"></script>
+</body>
+</html>

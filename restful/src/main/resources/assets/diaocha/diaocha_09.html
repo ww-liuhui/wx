@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>看看你是谁心中的贱人？</title>
+           <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+           <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+           <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!--        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>-->
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            
+            var descok = "看看你是谁心中的贱人？";//分享内容
+            
+            var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、你很容易就感到自卑吗？";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"是的","score":"2"};
+            Allquestion[0]['ans'][1] = {"name":"不是","score":"6"};
+            Allquestion[0]['ans'][2] = {"name":"还好","score":"4"};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、你总在要求别人尊重你吗？";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"是的","score":"7"};
+            Allquestion[1]['ans'][1] = {"name":"不是","score":"3"};
+            Allquestion[1]['ans'][2] = {"name":"还好","score":"5"};
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、你总是觉得自己说错话吗？";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"是的","score":"8"};
+            Allquestion[2]['ans'][1] = {"name":"不是","score":"9"};
+            Allquestion[2]['ans'][2] = {"name":"还好","score":"12"};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、你绝对不会被花言巧语打动吗？";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"是的","score":"7"};
+            Allquestion[3]['ans'][1] = {"name":"不是","score":"3"};
+            Allquestion[3]['ans'][2] = {"name":"不知道","score":"11"};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、比起流行音乐，你更喜欢古典音乐吗？";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"是的","score":"8"};
+            Allquestion[4]['ans'][1] = {"name":"不是","score":"13"};
+            Allquestion[4]['ans'][2] = {"name":"二者都差不多","score":"12"};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、和人发生争执，无论多生气，你都不会说过激的话吗？";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"是的","score":"10"};
+            Allquestion[5]['ans'][1] = {"name":"不是","score":"3"};
+            Allquestion[5]['ans'][2] = {"name":"不知道","score":"5"};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、你觉得和人相处，总是能面带微笑会比较好吗？";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"是的","score":"9"};
+            Allquestion[6]['ans'][1] = {"name":"不一定","score":"14"};
+            Allquestion[6]['ans'][2] = {"name":"不知道","score":"12"};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、你喜欢听别人对自己的评价，并且一定要照实说吗？";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"是的","score":"16"};
+            Allquestion[7]['ans'][1] = {"name":"不是","score":"15"};
+            Allquestion[7]['ans'][2] = {"name":"不知道","score":"19"};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、你总是对自己众多朋友中的一两个要求特别高，希望他们能凡事顺自己的意吗？";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"是的","score":"15"};
+            Allquestion[8]['ans'][1] = {"name":"不是","score":"18"};
+            Allquestion[8]['ans'][2] = {"name":"不知道","score":"20"};
+            //问题10
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、你觉得每个人的自私都是应该的，都是正常的吗？";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"是的","score":"8"};
+            Allquestion[9]['ans'][1] = {"name":"不是","score":"5"};
+            Allquestion[9]['ans'][2] = {"name":"不知道","score":"13"};
+            //问题11
+            Allquestion[10] = Array();
+            Allquestion[10]['tid'] = "11";
+            Allquestion[10]['title'] = "11、你觉得自己无论如何都不至于被人深深厌恶吗？";
+            Allquestion[10]['ans'] = Array();
+            Allquestion[10]['ans'][0] = {"name":"是的","score":"14"};
+            Allquestion[10]['ans'][1] = {"name":"不是","score":"9"};
+            Allquestion[10]['ans'][2] = {"name":"不知道","score":"7"};
+            //问题12
+            Allquestion[11] = Array();
+            Allquestion[11]['tid'] = "12";
+            Allquestion[11]['title'] = "12、无论用什么方法你都会拒绝别人对你提出的无理要求吗？";
+            Allquestion[11]['ans'] = Array();
+            Allquestion[11]['ans'][0] = {"name":"是的","score":"20"};
+            Allquestion[11]['ans'][1] = {"name":"不是","score":"16"};
+            Allquestion[11]['ans'][2] = {"name":"不知道","score":"15"};
+            //问题13
+            Allquestion[12] = Array();
+            Allquestion[12]['tid'] = "13";
+            Allquestion[12]['title'] = "13、你喜欢和哪类人交朋友？";
+            Allquestion[12]['ans'] = Array();
+            Allquestion[12]['ans'][0] = {"name":"尊敬自己的","score":"17"};
+            Allquestion[12]['ans'][1] = {"name":"能力高于自己的","score":"16"};
+            Allquestion[12]['ans'][2] = {"name":"有话直说的人","score":"19"};
+            //问题14
+            Allquestion[13] = Array();
+            Allquestion[13]['tid'] = "14";
+            Allquestion[13]['title'] = "14、当你和亲密朋友就某个问题发生争执时，你会：";
+            Allquestion[13]['ans'] = Array();
+            Allquestion[13]['ans'][0] = {"name":"不想再多说话","score":"9"};
+            Allquestion[13]['ans'][1] = {"name":"一定争个高低","score":"20"};
+            Allquestion[13]['ans'][2] = {"name":"不一定会怎样","score":"18"};
+            //问题15
+            Allquestion[14] = Array();
+            Allquestion[14]['tid'] = "15";
+            Allquestion[14]['title'] = "15、你觉得无论什么样的别离都是伤感的吗？";
+            Allquestion[14]['ans'] = Array();
+            Allquestion[14]['ans'][0] = {"name":"是的","score":"A"};
+            Allquestion[14]['ans'][1] = {"name":"不是","score":"C"};
+            Allquestion[14]['ans'][2] = {"name":"不知道","score":"D"};
+            //问题16
+            Allquestion[15] = Array();
+            Allquestion[15]['tid'] = "16";
+            Allquestion[15]['title'] = "16、你对自己的要求很高吗？";
+            Allquestion[15]['ans'] = Array();
+            Allquestion[15]['ans'][0] = {"name":"是的","score":"A"};
+            Allquestion[15]['ans'][1] = {"name":"不是","score":"C"};
+            Allquestion[15]['ans'][2] = {"name":"还好","score":"F"};
+            //问题17
+            Allquestion[16] = Array();
+            Allquestion[16]['tid'] = "17";
+            Allquestion[16]['title'] = "17、对当面让你难下台的人，你会怀恨在心吗？";
+            Allquestion[16]['ans'] = Array();
+            Allquestion[16]['ans'][0] = {"name":"会","score":"E"};
+            Allquestion[16]['ans'][1] = {"name":"不会","score":"F"};
+            Allquestion[16]['ans'][2] = {"name":"不知道","score":"19"};
+            //问题18
+            Allquestion[17] = Array();
+            Allquestion[17]['tid'] = "18";
+            Allquestion[17]['title'] = "18、别人一说话，你就大概能了解对方的性格吗？";
+            Allquestion[17]['ans'] = Array();
+            Allquestion[17]['ans'][0] = {"name":"是的","score":"B"};
+            Allquestion[17]['ans'][1] = {"name":"不是","score":"20"};
+            Allquestion[17]['ans'][2] = {"name":"不一定","score":"D"};
+            //问题19
+            Allquestion[18] = Array();
+            Allquestion[18]['tid'] = "19";
+            Allquestion[18]['title'] = "19、你对大多数人都是怀有一种将信将疑的态度吗？";
+            Allquestion[18]['ans'] = Array();
+            Allquestion[18]['ans'][0] = {"name":"是的","score":"E"};
+            Allquestion[18]['ans'][1] = {"name":"不是","score":"A"};
+            Allquestion[18]['ans'][2] = {"name":"看是什么人","score":"F"};
+            //问题20
+            Allquestion[19] = Array();
+            Allquestion[19]['tid'] = "20";
+            Allquestion[19]['title'] = "20、你总喜欢强调自己是一个怎么样的人吗？";
+            Allquestion[19]['ans'] = Array();
+            Allquestion[19]['ans'][0] = {"name":"不是","score":"C"};
+            Allquestion[19]['ans'][1] = {"name":"是的","score":"D"};
+            Allquestion[19]['ans'][2] = {"name":"还好","score":"B"};
+            
+            
+            
+            var Allans = Array();
+            //答案A
+            Allans[0] = Array();
+            Allans[0]['tip'] = "A";
+            Allans[0]['title'] = "你是死党眼中的贱人";
+            Allans[0]['content'] = "你虽然不容易亲近，却是个很忠诚的朋友，不会轻易背叛，但你的疑心病过重，也有强烈的报复心，谁要得罪你，会死得很难看，你要是翻脸的话，会绝情的不给任何机会，只许我负天下人，不愿天下人负我的强悍性格，令人难消受。聪明，友善，不啰唆，相处起来没啥令人痛苦的地方，只是你经常有些天马行空的想法，让人跟你的频率很难接轨，不知道是谁总在状况外，搞得场子变冷，最后只好有一方选择离开。";
+            //答案B
+            Allans[1] = Array();
+            Allans[1]['tip'] = "B";
+            Allans[1]['title'] = "你是同事心目中的贱人";
+            Allans[1]['content'] = "你的确多才多艺，也很热情慷慨，内外兼修十分难得，虽然你在团体中很出众，但是有些自我中心与人来疯的个性，有时会让人家觉得你太跩，有些高不可攀；过于爱面子和摆排场的个性，也让人觉得你有点儿功利，其实，经常打落牙齿和血吞的也是你，还真得不偿失";
+            //答案C
+            Allans[2] = Array();
+            Allans[2]['tip'] = "C";
+            Allans[2]['title'] = "你是熟人眼中的贱人";
+            Allans[2]['content'] = "个性圆融，重视形象的天秤，在社交场合很吃得开，容易左右逢源，你很会讲场面话，不轻易得罪人，只是相处一段时间之后，你就会露了馅，好辩的个性显露无疑，反正千错万错都是别人错，你是绝对没有错，这可很顾人怨的。热情，慷慨，没有心机，喜欢交朋友，是你的优点，但是过于大剌剌，讲话没头没脑，不看场合的乱放炮，有点儿白目，粗心大意外加神经大条，好奇心重，三分钟热度，则是你需要自我警惕的";
+            //答案D
+            Allans[3] = Array();
+            Allans[3]['tip'] = "D";
+            Allans[3]['title'] = "你是朋友眼中的贱人";
+            Allans[3]['content'] = "善体人意，思虑周密，应该是个很温馨有好人缘的人才对，不过表面上温和谦虚的你，其实喜欢吹毛求疵，爱在小处计较，容易翻脸，而且爱碎碎念，就算跟你熟识的人也会被你疲劳轰炸到受不了。谨慎细心该算是你的优点，不过若是八百年前的陈年老帐你都还记得清清楚楚，还真让人难受，尤其你天性害羞严肃，正经八百的个性，不善于言词表达，也让人不知怎么亲近你，你崇拜英雄，功利主义，还有被害妄想症的性格，也让人不敢恭维。";
+            //答案E
+            Allans[4] = Array();
+            Allans[4]['tip'] = "E";
+            Allans[4]['title'] = "你是恋人眼中的贱人";
+            Allans[4]['content'] = "想法和说话速度一样快的你，往往只是把自己想讲的话讲出来，就扬长而去，也不管人家是否了解，只要你自己没有感觉不妥的话，也甚少在意别人的感受，其实，如果能谦虚一些，改掉自以为是的毛病，人缘一定能更好的。会精打细算的你，不要以为两人感情稳定了，就可以邋里邋遢，搞得自己没形象，让另一半倒尽胃口。你还有个坏毛病，就是总认为既然两人都这么麻吉，还分什么你我，反正我的是我的，你的也是我的，不分彼此，抠门程度令人受不了。";
+            //答案F
+            Allans[5] = Array();
+            Allans[5]['tip'] = "F";
+            Allans[5]['title'] = "你是晚辈眼中的贱人";
+            Allans[5]['content'] = "虽然说你很温和善良，不过，你的思绪经常是飘忽的，注意力不集中，经常抓不到重点与方向，讲话老是有讲不清楚，让人摸不着头绪之感，也因为你怕得罪人，往往喜欢用谎言来包装，也容易给人一种暧昧，不切实际，缺乏担当的印象。做事稳健扎实勤劳，不过脑袋顽固，内心里蕴酿半天也讲不出一句让人顺耳或动听的话，还真木讷得可以，尤其是在所在意之人面前，更加的辞不达意像个闷葫芦，不妨去参加卡内基训练你人前的表达力，一定会更为成功。";
+            
+            $(function(){
+                //                nextQuestion(0);
+            }); 
+           
+            function reloadme(){
+                location.reload();             
+            }
+           
+            function start(obj,id){
+                if(id == "1"){
+                    $(obj).removeClass().addClass("img-thumbnail");
+                    setTimeout(function(){nextQuestion(id)},500);
+                }             
+            }
+            
+            function selectMe(obj,id){
+                $(obj).parent().removeClass().addClass("danger");
+                setTimeout(function(){nextQuestion(id)},500);
+            }
+            function nextQuestion(nowid){
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid == "A" || nowid == "B" || nowid == "C" || nowid == "D" || nowid == "E" || nowid == "F" ){
+                    var anstr = '<table class="table"><tbody>';
+                    
+                    var resTitle = "你是恋人眼中的贱人";
+                    var result = "想法和说话速度一样快的你，往往只是把自己想讲的话讲出来，就扬长而去，也不管人家是否了解，只要你自己没有感觉不妥的话，也甚少在意别人的感受，其实，如果能谦虚一些，改掉自以为是的毛病，人缘一定能更好的。会精打细算的你，不要以为两人感情稳定了，就可以邋里邋遢，搞得自己没形象，让另一半倒尽胃口。你还有个坏毛病，就是总认为既然两人都这么麻吉，还分什么你我，反正我的是我的，你的也是我的，不分彼此，抠门程度令人受不了。";
+                    for(var i=0;i<Allans.length;i++){
+                        if(nowid == Allans[i]['tip']){
+                            resTitle = Allans[i]['title'];
+                            descok = Allans[i]['title'];
+                            result = Allans[i]['content'];
+                            break;
+                        }
+                    }
+                    
+                    
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary btn-lg btn-block" onclick="show()">晒一晒你是谁的贱人</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success btn-lg btn-block" target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd">关注酷玩大学，大学不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-success btn-lg btn-block" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" target="_blank" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">更多测试</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center">'+ resTitle +'</h4><h5 class="text-center">'+ result +'</h5>' + anstr;
+                }else{
+                    nowid = parseInt(nowid);
+                    nowid -= 1;
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+           
+                    var anstr = '<table class="table"><tbody>';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        //                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "info";
+                                break;
+                        }
+                        anstr += '<tr class='+ className +'><td class="text-center" onclick="selectMe(this,\''+ Allquestion[nowid]['ans'][i]["score"] +'\');">'+ Allquestion[nowid]['ans'][i]["name"] +'</td></tr>';
+                    }
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 id="'+ tid +'" class="text-center">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/diaocha1/share/09.gif',
+                "link":'http://115.29.231.215/diaocha1/diaocha_09.html',
+                "desc":"你是恋人眼中的贱人",
+                "title":"看看你是谁心中的贱人？"
+            };
+            function share(){
+                document.title = window.wxData.desc = window.wxData.title + "<br/>经过测试," + descok ;
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+                share();//分享初始化
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd"><img src="head.png"></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <br/>
+                <div class="span12">
+                    <table class="table">
+					    <caption>
+						    <p class="text-center text-primary">看看你是谁心中的贱人？</p>
+                            <p id="backTime" class="text-danger text-center">选择性别开始测试咯~</p>
+                        </caption>
+                        <tbody>
+						     <tr>
+                                <td><p class="text-center text-primary"><img class="img-rounded" src="0.jpg" width="80%" onclick="start(this,'1')"><br/>男生</p></td>
+                                <td><p class="text-center text-danger"><img class="img-rounded" src="1.jpg" width="80%" onclick="start(this,'1')"><br/>女生</p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+						<p class="text-center"><a type="button" class="btn btn-success text-center btn-lg btn-block" target="_blank"href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">更多测试</a></p>
+                           </div>
+                         </div>
+                      </div>
+
+                                        <div id="fade" class="black_overlay" onclick="hide()">
+                                            <img src="share.png" style="width:100%"/>
+                                        </div>
+                                        </body>
+                                        </html>			

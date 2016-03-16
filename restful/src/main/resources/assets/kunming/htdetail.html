@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>为屋帮帮-我要找房-昆明</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="htdetail/css/htdetail.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="imagemode" content="force">
+    <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" type="image/x-icon" href="http://wx.weiwuu.com/wx/img/favicon.ico">
+    <meta name="keywords" content="为屋帮帮、免费看房、专车看房">
+    <meta name="description" content="昆明为屋帮帮为您提供昆明最新新楼盘、昆明开盘楼盘、在售楼盘、新房报价等信息查询和免费咨询、免费看房、专车看房，让您快捷的找到新房楼盘，更多昆明新房楼盘信息就在昆明为屋帮帮。">
+    <script type="application/javascript">
+        var host = window.location.host;
+        //var host = "localhost:8011";
+    </script>
+</head>
+<body>
+
+<div class="xf-head" id="top">
+    <div class="minwrap clearfix">
+        <div class="lf-nav">
+            <a class="logo" href="index.html"style="margin-top:10px;">
+                <img width="102" src="images/logo.png" alt="帮帮">
+            </a>
+            <div class="change-city">
+                <a class="current" href="/kunming">昆明</a>
+                <div class="city-wrap">
+                    <div class="city-list">
+                        <dl class="clearfix">
+                            <dt>热门城市</dt>
+                            <dd>
+                                <a href="/beijing">北京</a>
+                                <a href="/kunming">昆明</a>
+                                <a href="/changsha">长沙</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rt-nav">
+            <a href="index.html" target="_blank">首页</a>
+            <a class="on" href="#" target="_blank">找房</a>
+            <a rel="nofollow" href="connect.html" target="_blank">联系我们</a>
+            <a rel="nofollow" href="app.html" target="_blank">APP</a>
+        </div>
+    </div>
+</div>
+<div class="list-top">
+    <div class="minwrap">
+        <div class="search-box">
+            <div class="inpbox">
+                <span class="search-ico">搜索</span>
+                <input id="keyword" class="inp" type="search"
+                       placeholder="请输入楼盘名"
+                        >
+                <!-- 相关楼盘 -->
+                <div class="search-result hide" id="suggestResult"></div>
+            </div>
+            <button class="search-btn" id="search">搜索</button>
+        </div>
+    </div>
+</div><div class="minwrap">
+    <!-- 面包屑导航 -->
+    <div class="xf-belong">
+        <span>帮帮</span> &gt;
+        <a href="/kunming">昆明</a> &gt;
+        <a id="gname"></a> &gt;
+        <span id="htname1"></span>
+    </div>
+    <!-- /面包屑导航 -->
+
+    <!-- 图片&主信息 -->
+    <div class="detail-msg clearfix">
+
+        <div class="hs-imgs" id="gallery">
+            <div id="playimages" class="play">
+                <ul class="big_pic" id="big_pic">
+                    <div class="prev"></div>
+                    <div class="next"></div>
+                    <span class="mark_left" href="javascript:;"></span>
+                    <span class="mark_right" href="javascript:;"></span>
+                </ul>
+                <div class="small_pic">
+                    <ul style="width:390px;" id="small_pic">
+                    </ul>
+                </div>
+            </div>
+            <!--End-->
+        </div>
+
+        <div class="hs-infor">
+        <div class="topinfo">
+            <h1 class="hs-name fl" id="htname">
+            </h1>
+            <span id="saleStatus"></span>
+        </div>
+        <div style="height:10px;"></div>
+        <div class="tag" id="mark_list">
+        </div>
+        <div style="height:4px;"></div>
+        <div class="average">户型价格：
+            <span><big id="price"></big></span>万起
+        </div>
+        <div class="about-active">
+            <div class="active-cont">
+                <ul class="hsactive bag-free">
+                    <li>
+                        <i class="free">降</i>
+                        <span class="mcolor" id="preferential"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="infor">
+            <p>户型描述：<span id="details"></span></p><br>
+            <p>首付情况：商贷--><span id="downPayment" style="margin-right: 20px;"></span>公积金-->
+                <span id="downPayment2"></span></p>
+        </div>
+    </div>  </div>
+    <!-- /图片&主信息 -->
+    <!-- 户型属性 -->
+    <div class="hs-msg" id="prop-attr">
+        <h2 class="dt-title">户型信息</h2>
+        <table class="dt-table">
+            <tbody>
+            <tr>
+                <td>楼盘</td>
+                <td id="gname2"></td>
+                <td>户型</td>
+                <td id="htName2"></td>
+            </tr>
+            <tr>
+                <td>价格</td>
+                <td id="price2"></td>
+                <td>面积</td>
+                <td id="area"></td>
+            </tr>
+            <tr>
+                <td>朝向</td>
+                <td id="toward"></td>
+                <td>层高</td>
+                <td id="layerHigh"> </td>
+            </tr>
+            <tr>
+                <td>首付</td>
+                <td id="downPayment3"></td>
+                <td>梯户</td>
+                <td id="ladderHousehold"></td>
+            </tr>
+            <tr>
+                <td>总套数</td>
+                <td id="totalHouseNum"></td>
+                <td>在售套数</td>
+                <td id="inSalesVolume"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- /楼盘属性 -->
+    <!-- 楼盘简介 -->
+    <div class="detail-status" id="prop-news">
+        <div class="dt-title clearfix">
+            <span class="fl">户型特色</span>
+        </div>
+        <dl>
+            <ul class="list-main" id="ht_hf_list">
+            </ul>
+        </dl>
+    </div>
+    <!-- /楼盘简介 -->
+    <!-- 主力户型 -->
+    <div class="main-type" id="prop-types">
+        <h2 class="dt-title">其他户型</h2>
+        <p class="warmtip">温馨提示：总价与实际情况可能有偏差，仅供参考，具体价格以实际成交价格为准！</p>
+        <ul class="hs-type" id="ht_list">
+        </ul>
+        <div class="view-more">
+            <a href="javascript:;" id="houseTypeViewMore">更多户型</a>
+        </div>
+    </div>
+    <!-- /主力户型 -->
+</div>
+<div class="xf-foot">
+    <div class="minwrap">
+        <div class="clearfix">
+            <dl>
+                <dt>关于我们</dt>
+                <dd><a rel="nofollow" href="about">了解帮帮</a></dd>
+                <dd><a rel="nofollow" href="join">加入帮帮</a></dd>
+                <dd><a rel="nofollow" href="contact">联系我们</a></dd>
+            </dl>
+            <dl>
+                <dt>服务支持</dt>
+                <dd><a rel="nofollow" href="service">服务声明</a></dd>
+                <dd><a rel="nofollow" href="questions">常见问题</a></dd>
+            </dl>
+            <dl>
+                <dt>联系我们</dt>
+                <dd>邮箱：weiwuu@weiwuu.com</dd>
+                <dd>服务热线：400-139-1359</dd>
+            </dl>
+            <dl class="cord">
+                <dt>
+                    <img width="99" height="99" src="images/wxqr.jpg" alt="">
+                </dt>
+                <dd>扫一扫加微信</dd>
+            </dl>
+            <dl class="cord">
+                <dt>
+                    <img width="99" height="99" src="images/appqr.png" alt="">
+                </dt>
+                <dd>扫一扫下APP</dd>
+            </dl>
+        </div>
+        <p class="copyright">copyright © 2015-2016 www.weiwuu.com All Rights Reserved</p>
+    </div>
+</div>
+<!-- 返回按钮 -->
+<div class="xf-aside" id="popupAside">
+    <div class="column">
+        <a class="call">
+            <div class="msg"><span class="number">客服热线：<span class="mcolor">400-139-1359</span></span></div>
+        </a>
+        <a class="return" href="#top">
+            <span class="msg">返回顶部</span>
+        </a>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="htdetail/js/htdetail.js"></script>
+</body>
+</html>

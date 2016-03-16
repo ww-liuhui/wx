@@ -1,0 +1,42 @@
+// 微信用户信息
+message WXUser
+{
+    //unionid
+    optional string unionid = 1;
+
+    // 关注状态
+    optional int32 subscribe = 2;
+	// 关注时间
+    optional string subscribeTime = 3;
+	// 昵称
+    optional string nickname = 4;
+	// 性别 1男，2女，0未知
+    optional int32 sex = 5;
+	// 所在国家
+    optional string country = 6;
+	// 所在省份
+    optional string province = 7;
+	// 所在城市
+    optional string city = 8;
+	// 用户的语言，简体中文为：zh_CN
+    optional string languag = 9;
+	// 用户头像
+    optional string headImgUrl = 10;
+	// 备注
+    optional string remark = 11;
+	// 所在分组ID
+    optional string groupid = 12;
+	
+	// 每个公众号下用户的标识
+    optional string openId = 13;
+	
+	//userid
+    optional string userid = 14;
+	//用户姓名
+    optional string name = 15;
+	//用户电话
+    optional string tel = 16;
+
+    //用户类型：1：买房人；2：帮帮
+    optional int32 type = 21;
+}

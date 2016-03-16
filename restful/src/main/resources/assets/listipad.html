@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <title>为屋—我要找房</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/bootstarap.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/slick.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/core.css?343" media="all">
+    <link rel="stylesheet" type="text/css" href="css/blueimp-gallery.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/main.css?962" media="all">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+</head>
+<body>
+<script>
+    //域名
+    var host = window.location.host;
+    //var host = "localhost:8011";
+
+    //获取地址参数
+    function getUrlVars(){
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?')+1).split('&');
+        for(var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    //获取参数ID
+    var params = getUrlVars();
+    var gid = params["id"];
+    var p_city_id = params["cityId"];
+    var p_page_index = params["pageIndex"];
+    var p_page_size = params["pageSize"];
+
+</script>
+<div style="display: none"><script src="http://s95.cnzz.com/z_stat.php?id=1256849041&web_id=1256849041" language="JavaScript"></script></div>
+
+<div class="wrapper">
+    <!--<div class="loading" style="display: none;">-->
+    <!--<div class="lbk"><div class="lcont">正在加载...</div></div>-->
+    <!--</div>-->
+    <header class="header">
+        <div class="header-inner">
+            <div class="title" align="center">
+                <a href="#city" id="now_city" data-toggle="city" class="city-handle fade"data-city-id="273" style="display: none">昆明</a>
+                <span class="glyphicon glyphicon-search"
+                      aria-hidden="true"style="float: right;margin-right: 16px;color: white;margin-top: 12px;font-size: larger;" id="search"> </span>
+                <input type="text" placeholder="" class="search" id="keyword">
+            </div>
+            <!--<div align="center"><img src="img/head_logo.png" class="logo"></div>-->
+
+            <!--<div style="float: right;margin-right: 18px;color: white;margin-top: -33px;font-size: larger;">-->
+                <!--<span class="glyphicon glyphicon-search" aria-hidden="true"> </span>-->
+
+            <!--</div>-->
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <section class="section section-region" style="margin-top: -3px">
+        <!--<h2 class="hide">区域预算户型选择</h2>-->
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="text-center arrow" data-toggle="drop-down" data-type="districts" id="districts">区域</div>
+            </div>
+            <div class="col-xs-3">
+                <div class="text-center arrow" data-toggle="drop-down" data-type="housetype" id="housetype">户型</div>
+            </div>
+            <div class="col-xs-3">
+                <div class="text-center arrow" data-toggle="drop-down" data-type="price" id="price">价位</div>
+            </div>
+            <div class="col-xs-3">
+                <div class="text-center arrow" data-toggle="drop-down" data-type="mark" id="mark">标签</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-backdrop fade in" style="display: none;"></div>
+    <div id="districts-div" class="classboard list clearfix" style="display: none;margin-top: -12px;">
+        <ul class="lists">
+        </ul>
+    </div>
+    <div id="price-div" class="classboard list clearfix" style="display: none;margin-top: -12px;">
+        <ul class="lists">
+        </ul>
+    </div>
+    <div id="housetype-div" class="classboard list clearfix" style="display: none;margin-top: -12px;">
+        <ul class="lists">
+        </ul>
+    </div>
+    <div id="mark-div" class="classboard list clearfix" style="display: none;margin-top: -12px;">
+        <ul class="lists">
+        </ul>
+    </div>
+
+    <div class="fixed-margin-top-projetc-all"></div>
+    <section class="section section-loupan" id="gardenList-div">
+        <ul class="list-main">
+        </ul>
+    </section>
+
+    <script type="text/template" id="city-selection-tpl">
+        <div class="switch-city-letter">
+            <% _.each(alphaMap, function(element, index, list) { %>
+            <span data-toggle="letter-select" data-letter="<%= index.toUpperCase() %>" class="letter-select"><%= index.toUpperCase() %> </span>
+            <% }) %>
+        </div>
+        <header class="header">
+            <h1 class="title city-close" data-toggle="city-close">切换城市</h1>
+
+            <div class="clearfix"></div>
+        </header>
+        <div class="wrapper-city-fixed">
+            <section class="section">
+                <div class="switch-city">
+                    <div class="in">
+                        <h3>当前定位城市</h3>
+                        <a class="refresh" data-toggle="city-refresh">刷新</a>
+                        <ul class="in-xx">
+                            <li id="geo_local" class="city-select" data-toggle="city-select"
+                                data-city-id="<%= currentCity.cityId %>" data-city-name="<%= currentCity.cityName %>">
+                                <i><%= currentCity.cityName %></i></li>
+                        </ul>
+                    </div>
+
+                    <h3>热门城市<span class="pull-right hide">热门</span></h3>
+                    <ul class="in-xx">
+                        <li class="city-select" data-toggle="city-select" data-city-id="7" data-city-name="北京">
+                            <i>北京</i></li>
+                        <li class="city-select" data-toggle="city-select" data-city-id="79" data-city-name="上海">
+                            <i>上海</i></li>
+                        <li class="city-select" data-toggle="city-select" data-city-id="203" data-city-name="广州">
+                            <i>广州</i></li>
+                        <li class="city-select" data-toggle="city-select" data-city-id="205" data-city-name="深圳">
+                            <i>深圳</i></li>
+                        <li class="city-select" data-toggle="city-select" data-city-id="273" data-city-name="昆明">
+                            <i>昆明</i></li>
+                        <li class="city-select" data-toggle="city-select" data-city-id="189" data-city-name="长沙">
+                            <i>长沙</i></li>
+                    </ul>
+
+                    <% _.each(alphaMap, function(element, index, list) { %>
+                    <h3 id="alpha_<%= index.toUpperCase() %>"><%= index.toUpperCase() %></h3>
+                    <ul class="in-xx" style="">
+                        <% _.each(element, function(el, index, list) { %>
+                        <li class="city-select" data-toggle="city-select" data-city-id="<%= el.cityId %>"
+                            data-city-name="<%= el.cityName %>"><i><%= el.cityName %></i></li>
+                        <% })%>
+                    </ul>
+                    <% }) %>
+                </div>
+            </section>
+        </div>
+    </script>
+    <script type="text/javascript">
+        var require;
+        (function () {
+            require = {
+                paths: {
+                    "jquery": "js/listpad/jquery.js",
+                    "storageapi": "js/jquery.storageapi.js",
+                    "Backbone": "js/listpad/backbone.js",
+                    "underscore": "js/listpad/underscore.js",
+                    "h5-city": "js/listpad/city.js?3312",
+                    "h5-project-all": "js/listpad/project-all.js?121"
+                }
+            };
+            //requirejs paths不可以有.js后缀
+            for (var i in require.paths) {
+                var path = require.paths[i];
+                require.paths[i] = path.replace(/\.js$/, '');
+            }
+
+        })();
+    </script>
+    <script type="text/javascript" src="js/require.js" data-main="h5-project-all"></script>
+    <script type="text/template" id="sub-item-list"></script>
+
+
+</div>
+</body>
+<script type="text/javascript">
+
+</script>
+</html>

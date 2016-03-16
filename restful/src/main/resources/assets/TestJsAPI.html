@@ -1,0 +1,21 @@
+<html>
+	<head>
+	<title>JSAPI Test</title>
+	</head>
+	<body onload="Test()">
+
+	<button onclick="Test()">TEST BUTTON</button>
+	<script>
+		var appKey = "appKey";
+		var appSecret = "appSecret";
+		function Test(){
+			alert("test method");
+			WeiWuJSBridge.invoke("getUserInfo","{\"appKey\":"+appKey+",\"appSecret\":"+appSecret+"}","callback");
+
+		}
+		function callback(res) {
+			alert(res.message);
+		}
+	</script>
+	</body>
+</html>

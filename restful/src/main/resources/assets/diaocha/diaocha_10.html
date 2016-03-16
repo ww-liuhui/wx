@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>一题告诉你你的真实属性，准得吓人</title>
+           <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+           <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+           <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!--        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>-->
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+            .black_overlay1 {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 1;
+                opacity:.95;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            var shentime = 10; //初始化时间为10秒
+			
+			
+			
+            var descok = "一题告诉你你的真实属性，准得吓人";//分享内容             
+            var Allans = Array();
+            //答案1
+            Allans[0] = Array();
+            Allans[0]['tip'] = "1";
+            Allans[0]['title'] = "白痴型";
+            Allans[0]['content'] = "你拒绝只从一个严肃，理智的角度去理解事物。你的感觉亦十分重要。事实上，你觉得人生必需要有梦想才叫活得充实。<br/>但是冬天的沙滩上不可能有晒太阳的螃蟹，由此可见，你是个傻逼！！";
+            //答案2
+            Allans[1] = Array();
+            Allans[1]['tip'] = "2";
+            Allans[1]['title'] = "弱智型";
+            Allans[1]['content'] = "你好奇心旺盛，对新事物抱有开放的态度；你向往改变，讨厌束缚。你觉得身边的环境都不断在变，而且经常为你带来惊喜。<br/>但是冬天的橡树不可能枝繁叶茂，由此可见，你是个傻逼！！";
+            //答案3
+            Allans[2] = Array();
+            Allans[2]['tip'] = "3";
+            Allans[2]['title'] = "智障型";
+            Allans[2]['content'] = "你不介意冒险，特别喜欢有趣的，多元化的工作。你最兴奋的是可以积极参与任何比赛活动。<br/>但是冬天里黑嘴鹤是不飞的，由此可见，你是个傻逼！！";
+            //答案4
+            Allans[3] = Array();
+            Allans[3]['tip'] = "4";
+            Allans[3]['title'] = "傻瓜型";
+            Allans[3]['content'] = "你很容易认识朋友，但同时享受你的私人时间及独立生活。有时候，你会从人群中抽身而出，一个人静静地思考生活的意义，并自娱一番。你需要个人的空间，因此有时会隐匿于美梦当中，但你并不是一个爱孤独的人。<br/>但是冬天里是没有茶的，由此可见，你是个傻逼！！";
+            
+            
+//            var timeOutId;
+//            var times = 10; //倒计时十秒
+            $(function(){
+                //                nextQuestion(0);
+//                 timeOutId = setTimeout(function(){showLeave()},10000);
+            }); 
+            
+//            var leave=document.getElementById('leave');
+           
+            function reloadme(){
+//                location.reload();  
+                  window.location.reload(true);
+            }
+           
+            function start(obj,id){
+//                clearTimeout(timeOutId);
+                $(obj).removeClass().addClass("btn btn-primary btn-lg btn-block");
+                setTimeout(function(){nextQuestion(id)},500);          
+            }
+            
+            function selectMe(obj,id){
+                $(obj).parent().removeClass().addClass("danger");
+                setTimeout(function(){nextQuestion(id)},500);
+            }
+            function nextQuestion(nowid){
+                var question = "";
+                if(true){
+                    var anstr = '<table class="table"><tbody>';
+                    
+                    var resTitle = "傻瓜";
+                    var result = "";
+                    for(var i=0;i<Allans.length;i++){
+                        if(nowid == Allans[i]['tip']){
+                            resTitle = Allans[i]['title'];
+                            descok = Allans[i]['title'];
+                            result = Allans[i]['content'];
+                            break;
+                        }
+                    }
+                    
+                    
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary btn-lg btn-block" onclick="show()">晒一晒你的结果</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success btn-lg btn-block" target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd">关注酷玩大学，大学不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-warning btn-lg btn-block" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" target="_blank" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">我还想玩其他好玩的</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center"><img width="50%" src="fun/test_101.gif"/>'+ resTitle +'</h4><h5 class="text-center">'+ result +'</h5>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/diaocha1/share/03.jpg',
+                "link":'http://115.29.231.215/diaocha1/diaocha_03.html',
+                "desc":"一题告诉你你的真实属性，准得吓人",
+                "title":"一题告诉你你的真实属性，准得吓人"
+            };
+            function share(){
+                document.title = window.wxData.desc = window.wxData.title + "<br/>经过测试,我是个" + descok ;
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function showLeave(){
+                var leave=document.getElementById('leave');
+                leave.style.display='block';
+            }
+//             function hideLeave(){
+//                var leave=document.getElementById('leave');
+//                leave.style.display='none';
+//                reloadme();
+//            }
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+                share();//分享初始化
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd"><img src="head.png"></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <table class="table table-bordered">
+                        <caption>
+                            <br/>
+                            <h3>一题告诉你你的真实属性</h3>
+                            <p class="text-primary">在冬日的下午，你独自一人外出散步，你最希望看到以下哪一种景色？ </p>
+                        </caption>
+                        <tbody>
+                            <tr>
+                                <td><button type="button" class="btn btn-default btn-lg btn-block" onclick="start(this,'1')">沙滩上晒太阳的螃蟹</button></td>
+<!--                                <td><img class="img-rounded" src="tup/001.jpg" width="98%" onclick="start(this,'1')"></td> -->
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn btn-default btn-lg btn-block" onclick="start(this,'2')">枝繁叶茂的美丽橡树</button></td>
+<!--                                <td><img class="img-rounded" src="tup/004.jpg" width="98%" onclick="start(this,'2')"></td>  -->
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn btn-default btn-lg btn-block" onclick="start(this,'3')">迎风飞翔的黑嘴鹤</button></td>
+<!--                                <td><img class="img-rounded" src="tup/004.jpg" width="98%" onclick="start(this,'3')"></td>  -->
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn btn-default btn-lg btn-block" onclick="start(this,'4')">美丽善良的采茶姑娘</button></td>
+<!--                                <td><img class="img-rounded" src="tup/004.jpg" width="98%" onclick="start(this,'4')"></td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+<!--        <div id="leave" class="black_overlay1">
+            <div style="margin-top:50%;">
+            <p class="text-danger text-center" >亲，思考不能超过10秒钟</p>
+            <p class="text-center"><a type="button" class="btn btn-danger text-center" onclick="reloadme()">再来一次</a></p>
+            <p class="text-center"><a type="button" class="btn btn-success text-center"  target="_blank" href="http://mp.weixin.qq.com/s?__biz=MjM5MTgxMjAwMA==&mid=200602010&idx=1&sn=b5c4ff7d953bda9944e497e3448203e8&key=5bbdac63e2aaead4c211c47cdcdf21e3de8c4a17ad027be4d13e5bf13bc67475f46b2f4583f8764959aa0b712f672bd3&ascene=1&uin=MjE2MjQ3MDc2MA%3D%3D&pass_ticket=KEvMHLkRo2ba9KQ0RkBLjXY8JSJEMmQmo%2B22QlVx5fldSWaQgfj00YjtEwSDFR5Y">关注闲暇客，上厕所不再无聊~~</a></p>
+            </div>
+                        <img src="share.png" style="width:100%"/>
+        </div>-->
+        <div id="fade" class="black_overlay" onclick="hide()">
+            <img src="share.png" style="width:100%"/>
+        </div>
+    </body>
+</html>			

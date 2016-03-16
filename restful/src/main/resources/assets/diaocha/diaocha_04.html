@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2014年昆明话专业六级考试</title>
+           <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+           <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+           <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!--        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>-->
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            
+            var descok = "你让人念念不忘的指数？";//分享内容
+            
+            var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、昆明话中“爪下球”指的是哪种球？";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"排球","score":0};
+            Allquestion[0]['ans'][1] = {"name":"羽毛球","score":0};
+            Allquestion[0]['ans'][2] = {"name":"足球","score":10};
+            Allquestion[0]['ans'][3] = {"name":"篮球","score":0};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、昆明人见面打招呼时一般不会说话的是？";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"你整哪样","score":10};
+            Allquestion[1]['ans'][1] = {"name":"你咯吃得啦","score":0};
+            Allquestion[1]['ans'][2] = {"name":"你刻哪点","score":0};
+            Allquestion[1]['ans'][3] = {"name":"出来玩改","score":0};
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、昆明话中“打石了 ”意思是？";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"被雨淋湿了","score":0};
+            Allquestion[2]['ans'][1] = {"name":"东西丢了","score":10};
+            Allquestion[2]['ans'][2] = {"name":"被石头砸倒了","score":0};
+            Allquestion[2]['ans'][3] = {"name":"摔了一跤","score":0};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、昆明人经常挂在嘴边的“买买”所表示的意思是？";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"表示强烈的购买欲望","score":0};
+            Allquestion[3]['ans'][1] = {"name":"表示强烈的惊讶","score":10};
+            Allquestion[3]['ans'][2] = {"name":"表示强烈的愤怒","score":0};
+            Allquestion[3]['ans'][3] = {"name":"表示十分高兴","score":0};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、下面哪个词在昆明话中没有“不服气”的意思？";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"强刚","score":0};
+            Allquestion[4]['ans'][1] = {"name":"日气","score":0};
+            Allquestion[4]['ans'][2] = {"name":"枪得起","score":0};
+            Allquestion[4]['ans'][3] = {"name":"闷出出","score":10};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、昆明话中的“猫哩儿”指的是那种动物？";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"猫","score":0};
+            Allquestion[5]['ans'][1] = {"name":"牛","score":0};
+            Allquestion[5]['ans'][2] = {"name":"狗","score":0};
+            Allquestion[5]['ans'][2] = {"name":"驴子","score":10};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、昆明话中“改”一词一般用于下列那些句型？";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"陈述句和疑问句","score":0};
+            Allquestion[6]['ans'][1] = {"name":"疑问句和感叹句","score":10};
+            Allquestion[6]['ans'][2] = {"name":"感叹句和祈使句","score":0};
+            Allquestion[6]['ans'][3] = {"name":"祈使句和疑问句","score":0};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、昆明话中的“白色子”形容哪种人？";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"爱占小便宜的","score":0};
+            Allquestion[7]['ans'][1] = {"name":"小心谨慎的","score":0};
+            Allquestion[7]['ans'][2] = {"name":"好吃懒做的","score":10};
+            Allquestion[7]['ans'][3] = {"name":"皮肤白的","score":0};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、昆明话中”大街小巷“的正确发音应该是";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"da jie xiao xiang","score":0};
+            Allquestion[8]['ans'][1] = {"name":"da jie xiao han","score":0};
+            Allquestion[8]['ans'][2] = {"name":"da gai xiao hang","score":0};
+            Allquestion[8]['ans'][3] = {"name":"da gai xiao han","score":10};
+            //问题10
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、昆明人说的“沙拎果”指的是哪种水果？";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"山楂","score":10};
+            Allquestion[9]['ans'][1] = {"name":"葡萄","score":0};
+            Allquestion[9]['ans'][2] = {"name":"西瓜","score":0};
+            Allquestion[9]['ans'][3] = {"name":"苹果","score":0};
+            //问题11
+            Allquestion[10] = Array();
+            Allquestion[10]['tid'] = "11";
+            Allquestion[10]['title'] = "11、下面哪个词在昆明话中没有“行骗”的意思？";
+            Allquestion[10]['ans'] = Array();
+            Allquestion[10]['ans'][0] = {"name":"豁人","score":0};
+            Allquestion[10]['ans'][1] = {"name":"霍皮","score":10};
+            Allquestion[10]['ans'][2] = {"name":"支花篮","score":0};
+            Allquestion[10]['ans'][3] = {"name":"杀麻","score":0};
+            //问题12
+            Allquestion[11] = Array();
+            Allquestion[11]['tid'] = "12";
+            Allquestion[11]['title'] = "12、昆明话“诺诺”的意思是？";
+            Allquestion[11]['ans'] = Array();
+            Allquestion[11]['ans'][0] = {"name":"没问题","score":0};
+            Allquestion[11]['ans'][1] = {"name":"喜欢","score":0};
+            Allquestion[11]['ans'][2] = {"name":"睡觉","score":10};
+            Allquestion[11]['ans'][3] = {"name":"懦弱","score":0};
+            //问题13
+            Allquestion[12] = Array();
+            Allquestion[12]['tid'] = "13";
+            Allquestion[12]['title'] = "13、一个人打断别人说话时，昆明人怎么形容他？";
+            Allquestion[12]['ans'] = Array();
+            Allquestion[12]['ans'][0] = {"name":"孔雀","score":0};
+            Allquestion[12]['ans'][1] = {"name":"歪货","score":0};
+            Allquestion[12]['ans'][2] = {"name":"岔巴","score":10};
+            Allquestion[12]['ans'][3] = {"name":"憨定","score":0};
+            //问题14
+            Allquestion[13] = Array();
+            Allquestion[13]['tid'] = "14";
+            Allquestion[13]['title'] = "14、昆明话中“抖草”是什么意思？";
+            Allquestion[13]['ans'] = Array();
+            Allquestion[13]['ans'][0] = {"name":"洗菜","score":0};
+            Allquestion[13]['ans'][1] = {"name":"炫耀","score":10};
+            Allquestion[13]['ans'][2] = {"name":"拽","score":0};
+            Allquestion[13]['ans'][3] = {"name":"担心","score":0};
+            //问题15
+            Allquestion[14] = Array();
+            Allquestion[14]['tid'] = "15";
+            Allquestion[14]['title'] = "15、昆明话中“占马门”是什么意思？";
+            Allquestion[14]['ans'] = Array();
+            Allquestion[14]['ans'][0] = {"name":"占到了便宜","score":10};
+            Allquestion[14]['ans'][1] = {"name":"骂人的话","score":0};
+            Allquestion[14]['ans'][2] = {"name":"占了马的地盘","score":0};
+            Allquestion[14]['ans'][3] = {"name":"形容人不懂事","score":0};
+            
+            
+            
+            var Allans = Array();
+            //答案A
+            Allans[0] = Array();
+            Allans[0]['tip'] = "A";
+            Allans[0]['title'] = "不及格";
+            Allans[0]['content'] = "建议你还是坐在电脑面前多看看昆明的信息吧！！";
+            //答案B
+            Allans[1] = Array();
+            Allans[1]['tip'] = "B";
+            Allans[1]['title'] = "四级";
+            Allans[1]['content'] = "你可以在当地朋友的指导下勉强到昆明各地走走";
+            //答案C
+            Allans[2] = Array();
+            Allans[2]['tip'] = "C";
+            Allans[2]['title'] = "六级";
+            Allans[2]['content'] = "你可以独自在昆明潇洒了";
+            
+            
+            $(function(){
+                //                nextQuestion(0);
+            }); 
+           
+            function reloadme(){
+                location.reload();             
+            }
+            var myscore = 0;
+            function start(obj,id){
+                if(id == 0){
+                    $(obj).removeClass().addClass("btn btn-warning btn-lg btn-block");
+                    setTimeout(function(){nextQuestion(id,0)},500);
+                }             
+            }
+            
+            function selectMe(obj,score,id){
+                $(obj).removeClass().addClass("btn btn-success btn-lg");
+                setTimeout(function(){nextQuestion(id,score)},500);
+            }
+            function nextQuestion(nowid,score){
+                myscore += score;
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid >= questionLeng){
+                    var anstr = '<table class="table"><tbody>';
+                    var resTitle = "2014年昆明话专业六级考试";
+                    var result = "你的得分：" + myscore;
+//                    for(var i=0;i<Allans.length;i++){
+//                        if(nowid == Allans[i]['tip']){
+//                            resTitle = Allans[i]['title'];
+//                            descok = Allans[i]['title'];
+//                            result = Allans[i]['content'];
+//                            break;
+//                        }
+//                    }
+                    var ansId = 0;
+                    if(myscore > 0 && myscore <=80){
+                        ansId = 0;
+                    }else if(myscore <=110){
+                        ansId = 1;
+                    }else if(myscore <=150){
+                        ansId = 2;
+                    }
+                    resTitle = Allans[ansId]['title'];
+                    result = Allans[ansId]['content'];
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary  btn-lg btn-block" onclick="show()">分享给好友</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success  btn-lg btn-block" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd">关注酷玩大学，大学不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-warning btn-lg btn-block" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">我还想玩其他好玩的</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center text-warning">你的得分为:'+ myscore +'('+ resTitle +')</h4><strong>详细分析：</strong><h5>&nbsp;&nbsp;'+ result +'</h5>' + anstr;
+                }else{
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+                    var anstr = '<table class="table"><tbody>';
+                    anstr += '<tr class="warning"><td class="text-center"><div class="btn-group-vertical">';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        //                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "info";
+                                break;
+                        }
+                        
+                        anstr += '<button type="button" class="btn btn-default btn-lg" onclick="selectMe(this,'+ Allquestion[nowid]['ans'][i]["score"] +','+ Allquestion[nowid]['tid'] +');">'+ Allquestion[nowid]['ans'][i]["name"] +'</button>';
+                    }
+                    anstr +=  '</div></td></tr></tbody></table>';
+                    question = '<h5 class="text-center text-warning">你的得分为:'+ myscore +'</h5>'+'<h4 id="'+ tid +'" class="text-center">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/diaocha1/share/04.jpg',
+                "link":'http://115.29.231.215/diaocha1/diaocha_04.html',
+                "desc":"我在昆明话六级考试中得到了"+ myscore +"分，你能超过我么？2014昆明话六级考试",
+                "title":"2014昆明话六级考试"
+            };
+            function share(){
+                document.title = window.wxData.desc = "我在昆明话六级考试中得到了"+ myscore +"分，你能超过我么？2014昆明话六级考试";
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+                share();//分享初始化
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+<!--        <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+               <img src="pg_04.png" height="100%" width="100%"/>    
+            </div>-->
+        <div class="head">
+            <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd"><img src="head.png"></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <table class="table">
+                        <tbody>
+                            <tr class=''><td class="text-center"><h3>2014年昆明话专业六级考试</h3></td></tr>
+                            <tr class=''><td class="text-left"><p class="text-warning">注：不准携带通讯工具，不准交头接耳、一经发现，取消考试成绩，并终生禁止再次参加考试！</p></td></tr>
+                            <tr class=''><td class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" onclick="start(this,0)">&nbsp;&nbsp;&nbsp;开&nbsp;始&nbsp;考&nbsp;试&nbsp;&nbsp;&nbsp;</a></td></tr>
+                            <tr><td  class="text-center"><a type="button" class="btn btn-success btn-lg btn-block" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">&nbsp;更&nbsp;多&nbsp;测&nbsp;试&nbsp;</a></td></tr>
+                         </tbody>
+                      </table>
+                  </div>
+                </div>
+            </div>
+
+                                        <div id="fade" class="black_overlay" onclick="hide()">
+                                            <img src="share.png" style="width:100%"/>
+                                        </div>
+  </body>
+</html>			

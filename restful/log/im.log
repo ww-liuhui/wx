@@ -1,0 +1,689 @@
+INFO   [16:30:25.146] [main] o.e.j.u.log -  Logging initialized @3502ms 
+INFO   [16:30:25.452] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /assets/* 
+INFO   [16:30:25.631] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /wx/* 
+WARN   [16:30:25.631] [main] i.d.j.s.ServletEnvironment -  Overriding the existing servlet registered with the name: assets 
+INFO   [16:30:26.318] [main] i.d.s.ServerFactory -  Starting weiwuu-wx restfull service 
+INFO   [16:30:26.650] [main] o.e.j.s.SetUIDListener -  Opened application@4d0402b{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [16:30:26.651] [main] o.e.j.s.SetUIDListener -  Opened admin@2fa7ae9{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [16:30:26.658] [main] o.e.j.s.Server -  jetty-9.2.z-SNAPSHOT 
+INFO   [16:30:37.113] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    GET     /wxapi/addTemporaryMedia (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/comeBB (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getOrderByWxuid (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getUserInfo (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getoauthurl (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/oauth (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/validate (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/callCar (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getins (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /garden/getBrokerList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getCityList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilterGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilters (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenListByKey (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseTypeDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/recomRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/sendSMSRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    POST    /garden/creategroup (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /news/getFollowList (com.weiwuu.cloud.wx.resource.NewsResource)
+    GET     /news/getNewsById (com.weiwuu.cloud.wx.resource.NewsResource)
+    POST    /news/createNewsFollow (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowLike (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowUnlike (com.weiwuu.cloud.wx.resource.NewsResource)
+ 
+INFO   [16:30:37.133] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@700f518a{/,null,AVAILABLE} 
+INFO   [16:30:37.144] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+INFO   [16:30:37.153] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@75361cf6{/,null,AVAILABLE} 
+INFO   [16:30:37.429] [main] o.e.j.s.ServerConnector -  Started application@4d0402b{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [16:30:37.438] [main] o.e.j.s.ServerConnector -  Started admin@2fa7ae9{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [16:30:37.438] [main] o.e.j.s.Server -  Started @15798ms 
+INFO   [19:24:45.223] [Thread-15] o.e.j.s.ServerConnector -  Stopped application@4d0402b{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:24:45.231] [Thread-15] o.e.j.s.ServerConnector -  Stopped admin@2fa7ae9{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:24:45.235] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@75361cf6{/,null,UNAVAILABLE} 
+INFO   [19:24:45.296] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@700f518a{/,null,UNAVAILABLE} 
+INFO   [19:27:05.432] [main] o.e.j.u.log -  Logging initialized @3786ms 
+INFO   [19:27:05.658] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /assets/* 
+INFO   [19:27:05.779] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /wx/* 
+WARN   [19:27:05.779] [main] i.d.j.s.ServletEnvironment -  Overriding the existing servlet registered with the name: assets 
+INFO   [19:27:06.296] [main] i.d.s.ServerFactory -  Starting weiwuu-wx restfull service 
+INFO   [19:27:06.676] [main] o.e.j.s.SetUIDListener -  Opened application@4d0402b{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:27:06.677] [main] o.e.j.s.SetUIDListener -  Opened admin@2fa7ae9{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:27:06.686] [main] o.e.j.s.Server -  jetty-9.2.z-SNAPSHOT 
+INFO   [19:27:19.908] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    GET     /wxapi/addTemporaryMedia (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/comeBB (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getOrderByWxuid (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getUserInfo (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getoauthurl (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/oauth (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/validate (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/callCar (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getins (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /garden/getBrokerList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getCityList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilterGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilters (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenListByKey (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseTypeDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/recomRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/sendSMSRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    POST    /garden/creategroup (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /news/getFollowList (com.weiwuu.cloud.wx.resource.NewsResource)
+    GET     /news/getNewsById (com.weiwuu.cloud.wx.resource.NewsResource)
+    POST    /news/createNewsFollow (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowLike (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowUnlike (com.weiwuu.cloud.wx.resource.NewsResource)
+ 
+INFO   [19:27:19.925] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@2c8662ac{/,null,AVAILABLE} 
+INFO   [19:27:19.938] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+INFO   [19:27:19.949] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@3419e23b{/,null,AVAILABLE} 
+INFO   [19:27:20.113] [main] o.e.j.s.ServerConnector -  Started application@4d0402b{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:27:20.122] [main] o.e.j.s.ServerConnector -  Started admin@2fa7ae9{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:27:20.124] [main] o.e.j.s.Server -  Started @18481ms 
+INFO   [19:31:59.658] [Thread-15] o.e.j.s.ServerConnector -  Stopped application@4d0402b{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:31:59.663] [Thread-15] o.e.j.s.ServerConnector -  Stopped admin@2fa7ae9{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:31:59.667] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@3419e23b{/,null,UNAVAILABLE} 
+INFO   [19:31:59.690] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@2c8662ac{/,null,UNAVAILABLE} 
+INFO   [19:33:43.839] [main] o.e.j.u.log -  Logging initialized @3923ms 
+INFO   [19:33:44.069] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /assets/* 
+INFO   [19:33:44.220] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /wx/* 
+WARN   [19:33:44.221] [main] i.d.j.s.ServletEnvironment -  Overriding the existing servlet registered with the name: assets 
+INFO   [19:33:44.721] [main] i.d.s.ServerFactory -  Starting weiwuu-wx restfull service 
+INFO   [19:33:45.114] [main] o.e.j.s.SetUIDListener -  Opened application@4d0402b{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:33:45.115] [main] o.e.j.s.SetUIDListener -  Opened admin@2fa7ae9{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:33:45.147] [main] o.e.j.s.Server -  jetty-9.2.z-SNAPSHOT 
+INFO   [19:33:56.740] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    GET     /wxapi/addTemporaryMedia (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/comeBB (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getOrderByWxuid (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getUserInfo (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getoauthurl (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/oauth (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/validate (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/callCar (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getins (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /garden/getBrokerList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getCityList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilterGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilters (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenListByKey (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseTypeDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/recomRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/sendSMSRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    POST    /garden/creategroup (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /news/getFollowList (com.weiwuu.cloud.wx.resource.NewsResource)
+    GET     /news/getNewsById (com.weiwuu.cloud.wx.resource.NewsResource)
+    POST    /news/createNewsFollow (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowLike (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowUnlike (com.weiwuu.cloud.wx.resource.NewsResource)
+ 
+INFO   [19:33:56.757] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@13da7ab0{/,null,AVAILABLE} 
+INFO   [19:33:56.772] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+INFO   [19:33:56.784] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@6ba7383d{/,null,AVAILABLE} 
+INFO   [19:33:56.970] [main] o.e.j.s.ServerConnector -  Started application@4d0402b{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:33:56.979] [main] o.e.j.s.ServerConnector -  Started admin@2fa7ae9{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:33:56.980] [main] o.e.j.s.Server -  Started @17068ms 
+INFO   [19:35:16.135] [Thread-15] o.e.j.s.ServerConnector -  Stopped application@4d0402b{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:35:16.147] [Thread-15] o.e.j.s.ServerConnector -  Stopped admin@2fa7ae9{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:35:16.152] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@6ba7383d{/,null,UNAVAILABLE} 
+INFO   [19:35:16.178] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@13da7ab0{/,null,UNAVAILABLE} 
+INFO   [19:36:56.879] [main] o.e.j.u.log -  Logging initialized @3778ms 
+INFO   [19:36:57.086] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /assets/* 
+INFO   [19:36:57.245] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /wx/* 
+WARN   [19:36:57.245] [main] i.d.j.s.ServletEnvironment -  Overriding the existing servlet registered with the name: assets 
+INFO   [19:36:57.718] [main] i.d.s.ServerFactory -  Starting weiwuu-wx restfull service 
+INFO   [19:36:58.368] [main] o.e.j.s.SetUIDListener -  Opened application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:36:58.369] [main] o.e.j.s.SetUIDListener -  Opened admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:36:58.376] [main] o.e.j.s.Server -  jetty-9.2.z-SNAPSHOT 
+INFO   [19:37:08.114] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    GET     /wxapi/addTemporaryMedia (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/comeBB (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getOrderByWxuid (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getUserInfo (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getoauthurl (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/oauth (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/validate (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/callCar (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getins (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /garden/getBrokerList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getCityList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilterGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilters (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenListByKey (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseTypeDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/recomRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/sendSMSRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    POST    /garden/creategroup (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     / (com.weiwuu.cloud.wx.resource.IndexResource)
+    GET     /news/getFollowList (com.weiwuu.cloud.wx.resource.NewsResource)
+    GET     /news/getNewsById (com.weiwuu.cloud.wx.resource.NewsResource)
+    POST    /news/createNewsFollow (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowLike (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowUnlike (com.weiwuu.cloud.wx.resource.NewsResource)
+ 
+INFO   [19:37:08.137] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@4b3fe06e{/,null,AVAILABLE} 
+INFO   [19:37:08.152] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+INFO   [19:37:08.161] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@56913163{/,null,AVAILABLE} 
+INFO   [19:37:08.357] [main] o.e.j.s.ServerConnector -  Started application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:37:08.364] [main] o.e.j.s.ServerConnector -  Started admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:37:08.365] [main] o.e.j.s.Server -  Started @15268ms 
+INFO   [19:37:25.706] [dw-21 - GET /] c.w.c.w.r.IndexResource -  i am here! 
+INFO   [19:37:25.706] [dw-21 - GET /] c.w.c.w.v.IndexView -  i am here!!! 
+ERROR  [19:37:25.744] [dw-21 - GET /] i.d.j.e.LoggingExceptionMapper -  Error handling a request: c3e908e530e39984 
+io.dropwizard.views.ViewRenderException: Unable to find a renderer for /assets/kunming/index.html
+	at io.dropwizard.views.ViewMessageBodyWriter.writeTo(ViewMessageBodyWriter.java:79) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.views.ViewMessageBodyWriter.writeTo(ViewMessageBodyWriter.java:23) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.invokeWriteTo(WriterInterceptorExecutor.java:265) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.aroundWriteTo(WriterInterceptorExecutor.java:250) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.internal.JsonWithPaddingInterceptor.aroundWriteTo(JsonWithPaddingInterceptor.java:106) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundWriteTo(MappableExceptionWrapperInterceptor.java:86) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.writeTo(MessageBodyFactory.java:1128) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.writeResponse(ServerRuntime.java:664) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.processResponse(ServerRuntime.java:421) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.process(ServerRuntime.java:411) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:308) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:288) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1110) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:401) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:386) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:335) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:222) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:364) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:134) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:44) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:39) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at com.weiwuu.cloud.wx.filter.VerifyServletFilter.doFilter(VerifyServletFilter.java:52) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:95) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:159) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.Server.handle(Server.java:497) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+INFO   [19:39:50.116] [dw-52 - GET /] c.w.c.w.r.IndexResource -  i am here! 
+INFO   [19:39:50.116] [dw-52 - GET /] c.w.c.w.v.IndexView -  i am here!!! 
+ERROR  [19:39:50.120] [dw-52 - GET /] i.d.j.e.LoggingExceptionMapper -  Error handling a request: f9b13830c207ae1e 
+io.dropwizard.views.ViewRenderException: Unable to find a renderer for /assets/kunming/index.html
+	at io.dropwizard.views.ViewMessageBodyWriter.writeTo(ViewMessageBodyWriter.java:79) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.views.ViewMessageBodyWriter.writeTo(ViewMessageBodyWriter.java:23) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.invokeWriteTo(WriterInterceptorExecutor.java:265) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.aroundWriteTo(WriterInterceptorExecutor.java:250) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.internal.JsonWithPaddingInterceptor.aroundWriteTo(JsonWithPaddingInterceptor.java:106) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundWriteTo(MappableExceptionWrapperInterceptor.java:86) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.writeTo(MessageBodyFactory.java:1128) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.writeResponse(ServerRuntime.java:664) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.processResponse(ServerRuntime.java:421) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.process(ServerRuntime.java:411) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:308) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:288) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1110) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:401) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:386) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:335) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:222) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:364) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:134) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:44) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:39) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at com.weiwuu.cloud.wx.filter.VerifyServletFilter.doFilter(VerifyServletFilter.java:52) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:95) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:159) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.Server.handle(Server.java:497) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+INFO   [19:44:49.497] [Thread-15] o.e.j.s.ServerConnector -  Stopped application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:44:49.505] [Thread-15] o.e.j.s.ServerConnector -  Stopped admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:44:49.509] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@56913163{/,null,UNAVAILABLE} 
+INFO   [19:44:49.534] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@4b3fe06e{/,null,UNAVAILABLE} 
+INFO   [19:48:01.605] [main] o.e.j.u.log -  Logging initialized @3250ms 
+INFO   [19:48:01.740] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /assets/* 
+INFO   [19:48:01.817] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /wx/* 
+WARN   [19:48:01.818] [main] i.d.j.s.ServletEnvironment -  Overriding the existing servlet registered with the name: assets 
+INFO   [19:48:02.172] [main] i.d.s.ServerFactory -  Starting weiwuu-wx restfull service 
+INFO   [19:48:02.414] [main] o.e.j.s.SetUIDListener -  Opened application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:48:02.414] [main] o.e.j.s.SetUIDListener -  Opened admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:48:02.423] [main] o.e.j.s.Server -  jetty-9.2.z-SNAPSHOT 
+INFO   [19:48:13.200] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    GET     /wxapi/addTemporaryMedia (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/comeBB (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getOrderByWxuid (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getUserInfo (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getoauthurl (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/oauth (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/validate (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/callCar (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getins (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /garden/getBrokerList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getCityList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilterGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilters (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenListByKey (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseTypeDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/recomRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/sendSMSRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    POST    /garden/creategroup (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     / (com.weiwuu.cloud.wx.resource.IndexResource)
+    GET     /news/getFollowList (com.weiwuu.cloud.wx.resource.NewsResource)
+    GET     /news/getNewsById (com.weiwuu.cloud.wx.resource.NewsResource)
+    POST    /news/createNewsFollow (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowLike (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowUnlike (com.weiwuu.cloud.wx.resource.NewsResource)
+ 
+INFO   [19:48:13.217] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@4b3fe06e{/,null,AVAILABLE} 
+INFO   [19:48:13.228] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+INFO   [19:48:13.240] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@56913163{/,null,AVAILABLE} 
+INFO   [19:48:13.442] [main] o.e.j.s.ServerConnector -  Started application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:48:13.459] [main] o.e.j.s.ServerConnector -  Started admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:48:13.459] [main] o.e.j.s.Server -  Started @15105ms 
+INFO   [19:49:41.625] [dw-21 - GET /] c.w.c.w.r.IndexResource -  i am here! 
+INFO   [19:49:41.626] [dw-21 - GET /] c.w.c.w.v.IndexView -  i am here!!! 
+ERROR  [19:49:41.701] [dw-21 - GET /] i.d.j.e.LoggingExceptionMapper -  Error handling a request: 69a0efb1860c8c36 
+io.dropwizard.views.ViewRenderException: Unable to find a renderer for /kunming/index.html
+	at io.dropwizard.views.ViewMessageBodyWriter.writeTo(ViewMessageBodyWriter.java:79) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.views.ViewMessageBodyWriter.writeTo(ViewMessageBodyWriter.java:23) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.invokeWriteTo(WriterInterceptorExecutor.java:265) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.aroundWriteTo(WriterInterceptorExecutor.java:250) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.internal.JsonWithPaddingInterceptor.aroundWriteTo(JsonWithPaddingInterceptor.java:106) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundWriteTo(MappableExceptionWrapperInterceptor.java:86) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.writeTo(MessageBodyFactory.java:1128) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.writeResponse(ServerRuntime.java:664) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.processResponse(ServerRuntime.java:421) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.process(ServerRuntime.java:411) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:308) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:288) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1110) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:401) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:386) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:335) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:222) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:364) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:134) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:44) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:39) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at com.weiwuu.cloud.wx.filter.VerifyServletFilter.doFilter(VerifyServletFilter.java:52) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:95) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:159) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.Server.handle(Server.java:497) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+INFO   [19:49:48.041] [dw-22 - GET /] c.w.c.w.r.IndexResource -  i am here! 
+INFO   [19:49:48.041] [dw-22 - GET /] c.w.c.w.v.IndexView -  i am here!!! 
+ERROR  [19:49:48.049] [dw-22 - GET /] i.d.j.e.LoggingExceptionMapper -  Error handling a request: 522187da90354890 
+io.dropwizard.views.ViewRenderException: Unable to find a renderer for /kunming/index.html
+	at io.dropwizard.views.ViewMessageBodyWriter.writeTo(ViewMessageBodyWriter.java:79) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.views.ViewMessageBodyWriter.writeTo(ViewMessageBodyWriter.java:23) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.invokeWriteTo(WriterInterceptorExecutor.java:265) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.aroundWriteTo(WriterInterceptorExecutor.java:250) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.internal.JsonWithPaddingInterceptor.aroundWriteTo(JsonWithPaddingInterceptor.java:106) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundWriteTo(MappableExceptionWrapperInterceptor.java:86) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.writeTo(MessageBodyFactory.java:1128) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.writeResponse(ServerRuntime.java:664) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.processResponse(ServerRuntime.java:421) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$Responder.process(ServerRuntime.java:411) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:308) ~[restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:288) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1110) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:401) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:386) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:335) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:222) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:364) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:134) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:44) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:39) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at com.weiwuu.cloud.wx.filter.VerifyServletFilter.doFilter(VerifyServletFilter.java:52) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:95) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:159) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.Server.handle(Server.java:497) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555) [restful-1.0-SNAPSHOT.jar:1.0-SNAPSHOT]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+INFO   [19:51:09.469] [Thread-15] o.e.j.s.ServerConnector -  Stopped application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:51:09.474] [Thread-15] o.e.j.s.ServerConnector -  Stopped admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:51:09.475] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@56913163{/,null,UNAVAILABLE} 
+INFO   [19:51:09.486] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@4b3fe06e{/,null,UNAVAILABLE} 
+INFO   [19:57:42.584] [main] o.e.j.u.log -  Logging initialized @3415ms 
+INFO   [19:57:42.712] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /assets/* 
+INFO   [19:57:42.776] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /wx/* 
+WARN   [19:57:42.776] [main] i.d.j.s.ServletEnvironment -  Overriding the existing servlet registered with the name: assets 
+INFO   [19:57:43.189] [main] i.d.s.ServerFactory -  Starting weiwuu-wx restfull service 
+INFO   [19:57:43.388] [main] o.e.j.s.SetUIDListener -  Opened application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:57:43.389] [main] o.e.j.s.SetUIDListener -  Opened admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:57:43.421] [main] o.e.j.s.Server -  jetty-9.2.z-SNAPSHOT 
+INFO   [19:57:54.281] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    GET     /wxapi/addTemporaryMedia (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/comeBB (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getOrderByWxuid (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getUserInfo (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getoauthurl (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/oauth (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/validate (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/callCar (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getins (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /garden/getBrokerList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getCityList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilterGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilters (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenListByKey (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseTypeDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/recomRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/sendSMSRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    POST    /garden/creategroup (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     / (com.weiwuu.cloud.wx.resource.IndexResource)
+    GET     /news/getFollowList (com.weiwuu.cloud.wx.resource.NewsResource)
+    GET     /news/getNewsById (com.weiwuu.cloud.wx.resource.NewsResource)
+    POST    /news/createNewsFollow (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowLike (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowUnlike (com.weiwuu.cloud.wx.resource.NewsResource)
+ 
+INFO   [19:57:54.297] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@27b45ea{/,null,AVAILABLE} 
+INFO   [19:57:54.305] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+INFO   [19:57:54.311] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@702b06fb{/,null,AVAILABLE} 
+INFO   [19:57:54.468] [main] o.e.j.s.ServerConnector -  Started application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [19:57:54.476] [main] o.e.j.s.ServerConnector -  Started admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [19:57:54.476] [main] o.e.j.s.Server -  Started @15314ms 
+INFO   [20:08:17.741] [Thread-15] o.e.j.s.ServerConnector -  Stopped application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [20:08:17.749] [Thread-15] o.e.j.s.ServerConnector -  Stopped admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [20:08:17.753] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@702b06fb{/,null,UNAVAILABLE} 
+INFO   [20:08:17.786] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27b45ea{/,null,UNAVAILABLE} 
+INFO   [20:09:51.774] [main] o.e.j.u.log -  Logging initialized @3689ms 
+INFO   [20:09:51.968] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /assets/* 
+INFO   [20:09:52.081] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /wx/* 
+WARN   [20:09:52.082] [main] i.d.j.s.ServletEnvironment -  Overriding the existing servlet registered with the name: assets 
+INFO   [20:09:52.585] [main] i.d.s.ServerFactory -  Starting weiwuu-wx restfull service 
+INFO   [20:09:52.921] [main] o.e.j.s.SetUIDListener -  Opened application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [20:09:52.930] [main] o.e.j.s.SetUIDListener -  Opened admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [20:09:52.946] [main] o.e.j.s.Server -  jetty-9.2.z-SNAPSHOT 
+INFO   [20:10:03.259] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    GET     /wxapi/addTemporaryMedia (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/comeBB (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getOrderByWxuid (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getUserInfo (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getoauthurl (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/oauth (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/validate (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/callCar (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getins (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /garden/getBrokerList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getCityList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilterGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilters (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenListByKey (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseTypeDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/recomRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/sendSMSRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    POST    /garden/creategroup (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     / (com.weiwuu.cloud.wx.resource.IndexResource)
+    GET     /news/getFollowList (com.weiwuu.cloud.wx.resource.NewsResource)
+    GET     /news/getNewsById (com.weiwuu.cloud.wx.resource.NewsResource)
+    POST    /news/createNewsFollow (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowLike (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowUnlike (com.weiwuu.cloud.wx.resource.NewsResource)
+ 
+INFO   [20:10:03.276] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@3e17a0a1{/,null,AVAILABLE} 
+INFO   [20:10:03.289] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+INFO   [20:10:03.300] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@a18649a{/,null,AVAILABLE} 
+INFO   [20:10:03.461] [main] o.e.j.s.ServerConnector -  Started application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [20:10:03.471] [main] o.e.j.s.ServerConnector -  Started admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [20:10:03.471] [main] o.e.j.s.Server -  Started @15390ms 
+INFO   [20:12:07.875] [Thread-15] o.e.j.s.ServerConnector -  Stopped application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [20:12:07.880] [Thread-15] o.e.j.s.ServerConnector -  Stopped admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [20:12:07.883] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@a18649a{/,null,UNAVAILABLE} 
+INFO   [20:12:07.902] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@3e17a0a1{/,null,UNAVAILABLE} 
+INFO   [20:21:14.354] [main] o.e.j.u.log -  Logging initialized @4122ms 
+INFO   [20:21:14.539] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /assets/* 
+INFO   [20:21:14.645] [main] i.d.a.AssetsBundle -  Registering AssetBundle with name: assets for path /wx/* 
+WARN   [20:21:14.645] [main] i.d.j.s.ServletEnvironment -  Overriding the existing servlet registered with the name: assets 
+INFO   [20:21:15.094] [main] i.d.s.ServerFactory -  Starting weiwuu-wx restfull service 
+INFO   [20:21:15.426] [main] o.e.j.s.SetUIDListener -  Opened application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [20:21:15.427] [main] o.e.j.s.SetUIDListener -  Opened admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [20:21:15.440] [main] o.e.j.s.Server -  jetty-9.2.z-SNAPSHOT 
+INFO   [20:21:25.127] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    GET     /wxapi/addTemporaryMedia (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/comeBB (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getOrderByWxuid (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getUserInfo (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/getoauthurl (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/oauth (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /wxapi/validate (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/callCar (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getin (com.weiwuu.cloud.wx.resource.WXResource)
+    POST    /wxapi/getins (com.weiwuu.cloud.wx.resource.WXResource)
+    GET     /garden/getBrokerList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getCityList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilterGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getFilters (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenList (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getGardenListByKey (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseComment (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/getHouseTypeDetail (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/recomRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     /garden/sendSMSRegister (com.weiwuu.cloud.wx.resource.GardenResource)
+    POST    /garden/creategroup (com.weiwuu.cloud.wx.resource.GardenResource)
+    GET     / (com.weiwuu.cloud.wx.resource.IndexResource)
+    GET     /news/getFollowList (com.weiwuu.cloud.wx.resource.NewsResource)
+    GET     /news/getNewsById (com.weiwuu.cloud.wx.resource.NewsResource)
+    POST    /news/createNewsFollow (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowLike (com.weiwuu.cloud.wx.resource.NewsResource)
+    PUT     /news/editFollowUnlike (com.weiwuu.cloud.wx.resource.NewsResource)
+ 
+INFO   [20:21:25.142] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@3e17a0a1{/,null,AVAILABLE} 
+INFO   [20:21:25.160] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+INFO   [20:21:25.175] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@a18649a{/,null,AVAILABLE} 
+INFO   [20:21:25.389] [main] o.e.j.s.ServerConnector -  Started application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [20:21:25.400] [main] o.e.j.s.ServerConnector -  Started admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [20:21:25.400] [main] o.e.j.s.Server -  Started @15171ms 
+INFO   [20:50:47.247] [Thread-15] o.e.j.s.ServerConnector -  Stopped application@10b3df93{HTTP/1.1}{0.0.0.0:8011} 
+INFO   [20:50:47.294] [Thread-15] o.e.j.s.ServerConnector -  Stopped admin@ea27e34{HTTP/1.1}{0.0.0.0:8282} 
+INFO   [20:50:47.301] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@a18649a{/,null,UNAVAILABLE} 
+INFO   [20:50:47.329] [Thread-15] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@3e17a0a1{/,null,UNAVAILABLE} 

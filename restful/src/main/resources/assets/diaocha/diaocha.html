@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>测试页面</title>
+        <!--   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
+        <!--   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+        <!--   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、你在恋爱时会在公共场合亲吻ta吗？";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"不是","score":"10"};
+            Allquestion[0]['ans'][1] = {"name":"是的","score":"20"};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、你和TA交往多久后就发生关系了？";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"三个月以下","score":"10"};
+            Allquestion[1]['ans'][1] = {"name":"三个月以上","score":"20"};
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、你会在自己发脾气之后又后悔吗？";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"不确定","score":"10"};
+            Allquestion[2]['ans'][1] = {"name":"会","score":"20"};
+            Allquestion[2]['ans'][2] = {"name":"不会","score":"30"};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、你对于自己喜欢吃的总是要吃到尽兴吗？";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"是的","score":"10"};
+            Allquestion[3]['ans'][1] = {"name":"不确定","score":"20"};
+            Allquestion[3]['ans'][2] = {"name":"不会","score":"30"};
+            Allquestion[3]['ans'][3] = {"name":"看情况","score":"40"};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、你喜欢吃青椒么？";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"喜欢","score":"10"};
+            Allquestion[4]['ans'][1] = {"name":"不喜欢","score":"20"};
+            Allquestion[4]['ans'][2] = {"name":"看情况","score":"30"};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、你喜欢吃西红柿么？";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"吃","score":"10"};
+            Allquestion[5]['ans'][1] = {"name":"不吃","score":"20"};
+            Allquestion[5]['ans'][2] = {"name":"有时吃","score":"30"};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、你喜欢吃土豆么？";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"吃","score":"10"};
+            Allquestion[6]['ans'][1] = {"name":"不吃","score":"20"};
+            Allquestion[6]['ans'][2] = {"name":"有时吃","score":"30"};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、你喜欢吃番茄么？";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"吃","score":"10"};
+            Allquestion[7]['ans'][1] = {"name":"不吃","score":"20"};
+            Allquestion[7]['ans'][2] = {"name":"有时吃","score":"30"};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、你喜欢吃花生么？";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"吃","score":"10"};
+            Allquestion[8]['ans'][1] = {"name":"不吃","score":"20"};
+            Allquestion[8]['ans'][2] = {"name":"有时吃","score":"30"};
+            //问题9
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、你喜欢吃屁么？";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"吃","score":"10"};
+            Allquestion[9]['ans'][1] = {"name":"不吃","score":"20"};
+            Allquestion[9]['ans'][2] = {"name":"吃你妹","score":"30"};
+	
+            $(function(){
+                //                nextQuestion(0);
+            }); 
+           
+           function reloadme(){
+                 location.reload();             
+            }
+           
+           function start(obj,id){
+                if(id == -1){
+                    $(obj).removeClass().addClass("img-thumbnail");
+                    setTimeout(function(){nextQuestion(id+1)},500);
+                }             
+            }
+            
+            function selectMe(obj,id){
+                $(obj).parent().removeClass().addClass("danger");
+                setTimeout(function(){nextQuestion(id+1)},500);
+            }
+            function nextQuestion(nowid){
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid >= Allquestion.length){
+                    var anstr = '<table class="table"><tbody>';
+                    
+                    var result = "经过测试，你是个傻逼!";
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary" onclick="show()">晒出你的阳光抑郁指数</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success" href="http://mp.weixin.qq.com/s?__biz=MjM5MTgxMjAwMA==&mid=200602010&idx=1&sn=b5c4ff7d953bda9944e497e3448203e8&key=5bbdac63e2aaead4c211c47cdcdf21e3de8c4a17ad027be4d13e5bf13bc67475f46b2f4583f8764959aa0b712f672bd3&ascene=1&uin=MjE2MjQ3MDc2MA%3D%3D&pass_ticket=KEvMHLkRo2ba9KQ0RkBLjXY8JSJEMmQmo%2B22QlVx5fldSWaQgfj00YjtEwSDFR5Y">关注桃爆，上厕所不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-warning" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger" href="http://115.29.231.215:81/cgmen/audio/games.html">我还想玩其他好玩的</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center">'+ result +'</h4>' + anstr;
+                }else{
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+           
+                    var anstr = '<table class="table"><tbody>';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "info";
+                                break;
+                        }
+                        anstr += '<tr class='+ className +'><td class="text-center" onclick="selectMe(this,'+ nowid +');">'+ Allquestion[nowid]['ans'][i]["name"] +'</td></tr>';
+                    }
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 id="'+ tid +'" class="text-center">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/cocos2d_html5/h_plane/res/icon72x72.png',
+                "link":'http://115.29.231.215/cocos2d_html5/h_plane/',
+                "desc":"掌视闲暇客",
+                "title":"掌视闲暇客"
+            };
+            function share(m, step, percent){
+                if(m == 0){
+                    document.title = window.wxData.desc = "打啊，打啊，打飞机，你是我的小飞机～～～";
+                }
+                if(m == 1){
+                    document.title = window.wxData.desc = "继续刷屏！"+"我一次就打下"+step+"架飞机，打败"+percent+"%朋友圈的人！你能超过我吗？";
+                }
+                if(m == 2){
+                    document.title = window.wxData.desc = "我滴小飞机又跑掉了，T_T 快帮我打下来！";
+                }
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <img src="640.jpg">
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <table class="table">
+                        <tbody>
+                            <tr class=''><td class="text-center">这是一个国外很流行的心理测试。人们总在寻找快乐，也试图将自己想象成一个乐观主义者，无奈生活中有太多的压力，以致一些人不得不强颜欢笑。这些人从表面看，是非常快乐充满激情的，可是会把自己的负面情绪隐藏起来，内心极其郁闷。这种现象，我们称之为阳光性抑郁症。那么，你会患上这种阳光型抑郁症吗？来做个心理测试吧！</td></tr>
+                            <tr class=''><td class="text-center">点击开始测试咯~</td></tr>
+                            <tr class=''>
+                                <td class="text-left">
+                                    <div width="50%" style="float:left;"><img class="img-rounded" src="0.jpg" width="40%" onclick="start(this,-1)"><span>男生</span><div>
+                                    <div width="50%" style="float:right"><img class="img-circle" src="1.jpg" width="40%" onclick="start(this,-1)"><span>女生</span><div>
+                                </td>
+                            </tr>
+                            <tr><td  class="text-center"><a type="button" class="btn btn-success" href="http://mp.weixin.qq.com/s?__biz=MjM5MTgxMjAwMA==&mid=200602010&idx=1&sn=b5c4ff7d953bda9944e497e3448203e8&key=5bbdac63e2aaead4c211c47cdcdf21e3de8c4a17ad027be4d13e5bf13bc67475f46b2f4583f8764959aa0b712f672bd3&ascene=1&uin=MjE2MjQ3MDc2MA%3D%3D&pass_ticket=KEvMHLkRo2ba9KQ0RkBLjXY8JSJEMmQmo%2B22QlVx5fldSWaQgfj00YjtEwSDFR5Y">关注桃爆，上厕所不再无聊~~</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="fade" class="black_overlay" onclick="hide()">
+            <img src="share.png" style="width:100%"/>
+        </div>
+    </body>
+</html>			

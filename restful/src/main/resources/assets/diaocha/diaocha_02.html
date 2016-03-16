@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>你让人念念不忘的指数？</title>
+           <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+           <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+           <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!--        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>-->
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            
+            var descok = "你让人念念不忘的指数？";//分享内容
+            
+            var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、你喜欢用香水吗？";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"一般","score":"2"};
+            Allquestion[0]['ans'][1] = {"name":"很喜欢","score":"3"};
+            Allquestion[0]['ans'][2] = {"name":"不喜欢","score":"4"};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、你有自制过“黑暗料理”吗？";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"有很多次","score":"3"};
+            Allquestion[1]['ans'][1] = {"name":"有做过一次","score":"4"};
+            Allquestion[1]['ans'][2] = {"name":"没有","score":"5"};
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、你认为自己是一个乐于付出的人吗？";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"是的","score":"4"};
+            Allquestion[2]['ans'][1] = {"name":"不是","score":"5"};
+            Allquestion[2]['ans'][2] = {"name":"不确定","score":"6"};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、你有异性闺蜜吗？";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"有一两个","score":"5"};
+            Allquestion[3]['ans'][1] = {"name":"没有","score":"6"};
+            Allquestion[3]['ans'][2] = {"name":"有很多","score":"7"};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、如果遇到朋友不开心，你会？";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"带朋友去吃好吃的","score":"6"};
+            Allquestion[4]['ans'][1] = {"name":"找朋友聊天转移注意力","score":"7"};
+            Allquestion[4]['ans'][2] = {"name":"比较安静的陪着朋友","score":"8"};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、你身边的朋友大多是哪种类型的？";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"热情开朗的","score":"7"};
+            Allquestion[5]['ans'][1] = {"name":"幽默好动的","score":"8"};
+            Allquestion[5]['ans'][2] = {"name":"心细内向的","score":"9"};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、你愿意为了爱人改变自己吗？";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"愿意","score":"8"};
+            Allquestion[6]['ans'][1] = {"name":"不愿意","score":"9"};
+            Allquestion[6]['ans'][2] = {"name":"不确定","score":"10"};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、你总觉得理想和现实相距很远吗？";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"是的，很远","score":"9"};
+            Allquestion[7]['ans'][1] = {"name":"一点都不远","score":"10"};
+            Allquestion[7]['ans'][2] = {"name":"有点远","score":"11"};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、你对一个人的第一印象着重于着装吗？";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"完全不是","score":"10"};
+            Allquestion[8]['ans'][1] = {"name":"是的","score":"11"};
+            Allquestion[8]['ans'][2] = {"name":"有一点","score":"12"};
+            //问题10
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、你对奢华生活有多向往？";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"一般","score":"11"};
+            Allquestion[9]['ans'][1] = {"name":"特别向往","score":"12"};
+            Allquestion[9]['ans'][2] = {"name":"完全不向往","score":"C"};
+            //问题11
+            Allquestion[10] = Array();
+            Allquestion[10]['tid'] = "11";
+            Allquestion[10]['title'] = "11、你觉得下面哪种颜色的伴娘装最好看？";
+            Allquestion[10]['ans'] = Array();
+            Allquestion[10]['ans'][0] = {"name":"紫色","score":"12"};
+            Allquestion[10]['ans'][1] = {"name":"白色","score":"A"};
+            Allquestion[10]['ans'][2] = {"name":"粉红色","score":"C"};
+            //问题12
+            Allquestion[11] = Array();
+            Allquestion[11]['tid'] = "12";
+            Allquestion[11]['title'] = "12、你认为结婚门当户对很重要吗？";
+            Allquestion[11]['ans'] = Array();
+            Allquestion[11]['ans'][0] = {"name":"一点都不重要","score":"B"};
+            Allquestion[11]['ans'][1] = {"name":"很重要","score":"A"};
+            Allquestion[11]['ans'][2] = {"name":"不确定","score":"B"};
+            
+            
+            
+            var Allans = Array();
+            //答案A
+            Allans[0] = Array();
+            Allans[0]['tip'] = "A";
+            Allans[0]['title'] = "朝思暮想指数★";
+            Allans[0]['content'] = "你喜欢平淡一点的生活，不管是轰轰烈烈的爱情，还是声势浩大的友情，在你看来都有点可望不可即，或者说是承受不起。也许是害怕得到后再失去会更痛，也许是认为平淡一点才更真实。你既来之则安之，你随遇而安，不仅不强求别人的感情，更会有意无意的让自己淡出大家的视线，人群中如此多人，能够记住一个人本就很不易，你的刻意淡出，更多时候只会让你成为人群中的一个匆匆过客罢了。<br/>自己想要的生活才是最值得追求的，红尘中留下太多情也未必是好事，过自己的生活，享自己的快乐就好。";
+            //答案B
+            Allans[1] = Array();
+            Allans[1]['tip'] = "B";
+            Allans[1]['title'] = "朝思暮想指数★★";
+            Allans[1]['content'] = "你追求自由，不管是朋友，还是爱人，都秉着随缘的心态，合则来，不合则散。如果只是一面之缘，别人大概也就是见过就忘了的，但如果和你有一段时间的相处，就算是不能成为知己好友，也会因为你的幽默言辞，因为你一句打动内心的话而忘不了。至于有缘能和你成为朋友的人，因为深入的了解更多，就会知道更多你的好，你处处为别人着想，你从不做作，还有带给大家的小感动。<br/>其实能成为别人念念不忘的人，或是念念不忘谁，都是一种缘分，没必要强求最后各奔东西，或是散落天涯，美好的回忆也是值得珍惜的。";
+            //答案C
+            Allans[2] = Array();
+            Allans[2]['tip'] = "C";
+            Allans[2]['title'] = "朝思暮想指数★★★";
+            Allans[2]['content'] = "你不是一个张扬的人，能够淡定面对一些得失起落，别人却很难猜透你，与生俱来的神秘气质总是能够在无意之中就吸引到别人的注意。你真诚又懂得人心，与你相处的朋友会感到温暖，与你相恋的人会感到甜蜜。就算朋友间因为小事闹了点误会，因为你的好而对你的念念不忘，又会促使朋友主动解开误会，与你言归于好。就算是分手的恋人，也不会忘了这段曾经带给彼此的感动，不会忘了你。<br/>人一辈子，总要走过路过错过一些美好，你心中有你的美好，你也可能成为别人心中的美好，只是不要把念念不忘当成了执念，当成美好的过往就好。";
+            
+            
+            $(function(){
+                //                nextQuestion(0);
+            }); 
+           
+            function reloadme(){
+                location.reload();             
+            }
+           
+            function start(obj,id){
+                if(id == "1"){
+                    $(obj).removeClass().addClass("img-thumbnail");
+                    setTimeout(function(){nextQuestion(id)},500);
+                }             
+            }
+            
+            function selectMe(obj,id){
+                $(obj).parent().removeClass().addClass("danger");
+                setTimeout(function(){nextQuestion(id)},500);
+            }
+            function nextQuestion(nowid){
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid == "A" || nowid == "B" || nowid == "C"){
+                    var anstr = '<table class="table"><tbody>';
+                    
+                    var resTitle = "朝思暮想指数★★";
+                    var result = "你不是一个张扬的人，能够淡定面对一些得失起落，别人却很难猜透你，与生俱来的神秘气质总是能够在无意之中就吸引到别人的注意。你真诚又懂得人心，与你相处的朋友会感到温暖，与你相恋的人会感到甜蜜。就算朋友间因为小事闹了点误会，因为你的好而对你的念念不忘，又会促使朋友主动解开误会，与你言归于好。就算是分手的恋人，也不会忘了这段曾经带给彼此的感动，不会忘了你。<br/>人一辈子，总要走过路过错过一些美好，你心中有你的美好，你也可能成为别人心中的美好，只是不要把念念不忘当成了执念，当成美好的过往就好。";
+                    for(var i=0;i<Allans.length;i++){
+                        if(nowid == Allans[i]['tip']){
+                            resTitle = Allans[i]['title'];
+                            descok = Allans[i]['title'];
+                            result = Allans[i]['content'];
+                            break;
+                        }
+                    }
+                    
+                    
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary btn-lg btn-block" onclick="show()">晒一晒你的朝思暮想指数</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success btn-lg btn-block" target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd">关注酷玩大学，大学不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-success btn-lg btn-block" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" target="_blank" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">更多测试</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center">'+ resTitle +'</h4><h5 class="text-center">'+ result +'</h5>' + anstr;
+                }else{
+                    nowid = parseInt(nowid);
+                    nowid -= 1;
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+           
+                    var anstr = '<table class="table"><tbody>';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        //                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "info";
+                                break;
+                        }
+                        anstr += '<tr class='+ className +'><td class="text-center" onclick="selectMe(this,\''+ Allquestion[nowid]['ans'][i]["score"] +'\');">'+ Allquestion[nowid]['ans'][i]["name"] +'</td></tr>';
+                    }
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 id="'+ tid +'" class="text-center">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/diaocha1/share/02.jpg',
+                "link":'http://115.29.231.215/diaocha1/diaocha_02.html',
+                "desc":"我的朝思暮想指数为★★",
+                "title":"你让人念念不忘的指数？"
+            };
+            function share(){
+                document.title = window.wxData.desc = window.wxData.title + "<br/>经过测试,我的" + descok ;
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+                share();//分享初始化
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd"><img src="head.png"></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <br/>
+                <div class="span12">
+                    <table class="table">
+					    <caption>
+						    <p class="text-center text-primary">你让人念念不忘的指数？</p>
+                            <p id="backTime" class="text-danger text-center">选择性别开始测试咯~</p>
+                        </caption>
+                        <tbody>
+						     <tr>
+                                <td><p class="text-center text-primary"><img class="img-rounded" src="0.jpg" width="80%" onclick="start(this,'1')"><br/>男生</p></td>
+                                <td><p class="text-center text-danger"><img class="img-rounded" src="1.jpg" width="80%" onclick="start(this,'1')"><br/>女生</p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+						<p class="text-center"><a type="button" class="btn btn-success text-center btn-lg btn-block" target="_blank"href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">更多测试</a></p>
+                           </div>
+                         </div>
+                      </div>
+
+                                        <div id="fade" class="black_overlay" onclick="hide()">
+                                            <img src="share.png" style="width:100%"/>
+                                        </div>
+                                        </body>
+                                        </html>			

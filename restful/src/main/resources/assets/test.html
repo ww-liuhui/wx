@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>测试页面</title>
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+
+        var host = "localhost:8011";
+
+        //获取地址参数
+        function getUrlVars(){
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?')+1).split('&');
+            for(var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        //获取参数ID
+        var params = getUrlVars();
+        var code = params[params[0]];
+        alert("http://" + host + "/wxapi/oauth?code=" + code);
+        var user_info = null;
+        $.ajax({
+            type: "get",
+            url: "http://" + host + "/wxapi/oauth?code=" + code,
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                user_info = data.body.data;
+                alert(user_info.unionid);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("操作失败，请检查网络状态！");
+            }
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

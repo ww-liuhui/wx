@@ -1,0 +1,44 @@
+// 约车
+message CallCar
+{
+    // 约车ID
+    optional int32 id = 1;
+
+    // 约车时间
+    optional string time = 2;
+	// 上车地点
+    optional string addrFrom = 3;
+	// 目的地点
+    optional string addrTo = 4;
+	
+	// 客户微信UID
+    optional string wxuid = 11;
+	// 客户姓名
+    optional string name = 12;
+	// 客户电话
+    optional string tel = 13;
+
+    // 约车状态  0：未派车，1：已派车，2：已取消
+    optional int32 status = 21;
+
+    //所在城市ID
+    optional int32 cityId = 31;
+
+    //服务帮帮信息
+    // 帮帮ID
+    optional string bbid = 41;
+    // 帮帮电话
+    optional string bbtel = 42;
+    // 帮帮姓名
+    optional string bbname = 43;
+
+    //专车信息
+    // 车牌号
+    optional string carnum = 51;
+    // 司机电话
+    optional string cartel = 52;
+    // 司机姓名
+    optional string carname = 53;
+    // 专车型号
+    optional string cartype = 54;
+}

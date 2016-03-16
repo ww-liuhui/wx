@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <title id="title"></title>
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css?22"/>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<script>
+    //域名
+    var host = window.location.host;
+    // var host = "localhost:8011";
+</script>
+<div class="wrapper" id="main">
+    <div class="detail" id="detail">
+        <div class="detail_title">
+        </div>
+        <div class="detail_h2"><span class="detail_time"></span><span class="detail_author"></span></div>
+        <div class="ui divider" style="margin-top: 0px;"></div>
+        <div class="detail_content"></div>
+        <div class="ui divider" id="divider"></div>
+        <div class="ui search">
+            <input class="prompt" type="text" placeholder="我想说......" style="width: 80%;margin-top: 4px;margin-left:
+            4px;" id="content">
+            <i class="large orange inverted circular send outline icon" id="send"
+               style="float: right;margin-right: 12px;margin-bottom: 10px;"></i>
+        </div>
+        <div class="ui divider"></div>
+        <div class="pl_list" id="pl_list">
+            <div style="height: 30px;"></div>
+        </div>
+    </div>
+    <div class="top_bar"
+         style="-webkit-transform:translate3d(0,0,0);">
+        <i class="large orange inverted circular edit icon" id="sendbutton"
+           style="float: right;margin-right: 12px;margin-bottom: 10px;"></i>
+    </div>
+
+</div>
+<script src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/long.min.js"></script>
+<script type="text/javascript" src="js/bytebuffer.min.js"></script>
+<script type="text/javascript" src="js/protobuf.min.js"></script>
+<script type="text/javascript" src="js/news/newsdetail.js?1"></script>
+<script type="text/javascript" src="js/jsapi_weiwuu.js"></script>
+</body>
+</html>

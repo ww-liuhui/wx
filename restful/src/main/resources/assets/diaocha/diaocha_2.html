@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>测测你看过几部禽兽极禁片</title>
+        <!--   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
+        <!--   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+        <!--   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+        </style>
+        <script>
+            var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、丧尽天良！舅舅监禁妹妹追杀外甥";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"西游记","score":"10"};
+            Allquestion[0]['ans'][1] = {"name":"阿凡提","score":"20"};
+            Allquestion[0]['ans'][2] = {"name":"宝莲灯","score":"20"};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、白女士整容三次均失败，最后竟让乱棍打死";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"妖精的尾巴","score":"10"};
+            Allquestion[1]['ans'][1] = {"name":"三打白骨精","score":"20"};
+            Allquestion[1]['ans'][2] = {"name":"花木兰从军","score":"20"};
+            
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、男人误食罐头，吃了以后暴力无比";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"全职猎人","score":"10"};
+            Allquestion[2]['ans'][1] = {"name":"大力水手","score":"20"};
+            Allquestion[2]['ans'][2] = {"name":"海贼王","score":"30"};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、无耻幼童整日胡言乱语，终日猥亵年长女性为乐";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"卑鄙的我","score":"10"};
+            Allquestion[3]['ans'][1] = {"name":"蜡笔小新","score":"20"};
+            Allquestion[3]['ans'][2] = {"name":"火影忍者","score":"30"};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、七尺男惨遭毒手变侏儒，痴情女真情不变仍同居";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"名侦探柯南","score":"10"};
+            Allquestion[4]['ans'][1] = {"name":"死神","score":"20"};
+            Allquestion[4]['ans'][2] = {"name":"看情况","score":"30"};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、销魂！庐山升龙霸，强奸雅典娜";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"进击的巨人","score":"10"};
+            Allquestion[5]['ans'][1] = {"name":"妖精的尾巴","score":"20"};
+            Allquestion[5]['ans'][2] = {"name":"圣斗士星矢","score":"30"};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、孩子脑积水，父亲脑萎缩，脑残父子猥琐生活";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"吃","score":"10"};
+            Allquestion[6]['ans'][1] = {"name":"大头儿子和小头爸爸","score":"20"};
+            Allquestion[6]['ans'][2] = {"name":"有时吃","score":"30"};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、自强不息！五指少年和蓝胖子的故事";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"机器猫","score":"10"};
+            Allquestion[7]['ans'][1] = {"name":"忍者神龟","score":"20"};
+            Allquestion[7]['ans'][2] = {"name":"怪物史莱克","score":"30"};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、亲生父母竟成禽兽，未成年少女被迫卖身洗浴中心";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"青春之旅","score":"10"};
+            Allquestion[8]['ans'][1] = {"name":"千与千寻","score":"20"};
+            Allquestion[8]['ans'][2] = {"name":"灌篮高手","score":"30"};
+            //问题10
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、性情各异，众不明生物丛林深处智斗变态老男";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"蓝精灵","score":"10"};
+            Allquestion[9]['ans'][1] = {"name":"葫芦娃","score":"20"};
+            Allquestion[9]['ans'][2] = {"name":"熊来了","score":"30"};
+            //问题11
+            Allquestion[10] = Array();
+            Allquestion[10]['tid'] = "11";
+            Allquestion[10]['title'] = "11、耸人听闻！近视少女人头分离！";
+            Allquestion[10]['ans'] = Array();
+            Allquestion[10]['ans'][0] = {"name":"生化危机","score":"10"};
+            Allquestion[10]['ans'][1] = {"name":"海的女儿","score":"20"};
+            Allquestion[10]['ans'][2] = {"name":"阿雷拉","score":"30"};
+            //问题12
+            Allquestion[11] = Array();
+            Allquestion[11]['tid'] = "12";
+            Allquestion[11]['title'] = "12、两少年人穷志不短，仅着内裤环游世界，还做某冰箱代言人";
+            Allquestion[11]['ans'] = Array();
+            Allquestion[11]['ans'][0] = {"name":"海尔兄弟","score":"10"};
+            Allquestion[11]['ans'][1] = {"name":"钢炼","score":"20"};
+            Allquestion[11]['ans'][2] = {"name":"大唐双龙传","score":"30"};
+            //问题13
+            Allquestion[12] = Array();
+            Allquestion[12]['tid'] = "13";
+            Allquestion[12]['title'] = "13、反复变性为哪般？花季少男的辛酸史";
+            Allquestion[12]['ans'] = Array();
+            Allquestion[12]['ans'][0] = {"name":"奥特曼","score":"10"};
+            Allquestion[12]['ans'][1] = {"name":"乱马","score":"20"};
+            Allquestion[12]['ans'][2] = {"name":"黑子的篮球","score":"30"};
+            //问题14
+            Allquestion[13] = Array();
+            Allquestion[13]['tid'] = "14";
+            Allquestion[13]['title'] = "14、惊！恶母杀女未遂，奇！尸变终成眷侣";
+            Allquestion[13]['ans'] = Array();
+            Allquestion[13]['ans'][0] = {"name":"天使之羽","score":"10"};
+            Allquestion[13]['ans'][1] = {"name":"白雪公主","score":"20"};
+            Allquestion[13]['ans'][2] = {"name":"银魂","score":"30"};
+            //问题15
+            Allquestion[14] = Array();
+            Allquestion[14]['tid'] = "15";
+            Allquestion[14]['title'] = "15、剑指青天啊，未成年清纯女中学生上演人狗情未了";
+            Allquestion[14]['ans'] = Array();
+            Allquestion[14]['ans'][0] = {"name":"哪吒闹海","score":"10"};
+            Allquestion[14]['ans'][1] = {"name":"白雪公主","score":"20"};
+            Allquestion[14]['ans'][2] = {"name":"犬夜叉","score":"30"};
+	
+            $(function(){
+                nextQuestion(0);
+            }); 
+		
+            function selectMe(obj,id){
+                //$(obj).prev('.tex').val()
+                $(obj).removeClass().addClass("btn btn-success");
+                //setTimeout(nextQuestion(id+1),3000);
+                setTimeout(function(){nextQuestion(id+1)},500);
+                //nextQuestion(id+1);
+            }
+            //$("table tbody tr td").bind("click",function(){
+            //  alert(this);
+            //});
+            function nextQuestion(nowid){
+                //alert("123");
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid >= Allquestion.length){
+                    var anstr = '<table class="table"><tbody>';
+                    var result = "经过测试，你是个变态!<br/>ps:离哪些小妹妹远点!";
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center">'+ result +'</h4>' + anstr;
+                }else{
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+           
+                    var anstr = '<table class="table"><tbody>';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "info";
+                                break;
+                        }
+                        anstr += '<tr class='+ className +'><td class="text-center"><button type="button"  onclick="selectMe(this,'+ nowid +');" class="btn btn-primary">'+ Allquestion[nowid]['ans'][i]["name"] +'</button></td></tr>';
+                    }
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 id="'+ tid +'" class="text-center">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <img src="640.jpg">
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>			

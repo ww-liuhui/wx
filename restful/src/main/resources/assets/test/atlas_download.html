@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>为屋App下载</title>
+</head>
+<script type="text/javascript">
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    alert('是否是Android：'+isAndroid);
+    alert('是否是iOS：'+isiOS);
+    if(isAndroid){
+        window.location.href="http://fusion.qq.com/cgi-bin/qzapps/unified_jump?appid=12187890&from=singlemessage&isTimeline=false&actionFlag=0&params=pname%3Dcom.weiwuu.fairy%26versioncode%3D21%26channelid%3D%26actionflag%3D0&isappinstalled=0";
+    }else if(isiOS){
+        window.location.href="https://appsto.re/cn/6IK_9.i";
+    }
+
+</script>
+<body>
+
+</body>
+</html>

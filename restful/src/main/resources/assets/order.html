@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <title id="title">预约看房</title>
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css?222"/>
+
+    <link href="time/css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css"/>
+    <link href="time/css/mobiscroll.animation-2.5.2.css" rel="stylesheet" type="text/css"/>
+    <!-- S 可根据自己喜好引入样式风格文件 -->
+    <link href="time/css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/wxoauth.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<script>
+    //域名
+    var host = window.location.host;
+    //var host = "localhost:8011";
+</script>
+<div class="wrapper" id="main" style="padding: 30px;">
+    <div class="ui search">
+        <input class="prompt" type="text" placeholder="您的称呼" style="width: 80%;margin-top: 4px;margin-left:
+            4px;" id="name">
+        <i class="orange large user icon"></i>
+    </div>
+    <br>
+
+    <div class="ui search">
+        <input class="prompt" type="text" placeholder="联系方式" style="width: 80%;margin-top: 4px;margin-left:
+            4px;" id="tel">
+        <a href="" id="tel_call"><i class="orange large horizontally flipped call icon"></i></a>
+    </div>
+    <br>
+
+    <div class="ui search">
+        <input class="prompt" type="text" placeholder="预约时间" style="width: 80%;margin-top: 4px;margin-left:
+            4px;" id="time">
+        <i class="orange large wait icon"></i>
+    </div>
+    <br>
+
+    <div class="ui search">
+        <input class="prompt" type="text" placeholder="出发地点" style="width: 80%;margin-top: 4px;margin-left:
+            4px;" id="addr_from">
+        <i class="orange large marker icon"></i>
+    </div>
+    <br>
+    <div class="ui search">
+        <input class="prompt" type="text" placeholder="目的楼盘" style="width: 80%;margin-top: 4px;margin-left:
+            4px;" id="addr_to">
+        <i class="orange large marker icon"></i>
+    </div>
+
+    <br>
+    <div class="ui search">
+        <div style="text-align: center;">
+            <a id="bbtel" style="display: none;"><i class="big green inverted circular horizontally flipped call icon"
+               style="margin-right: 12px;margin-bottom:10px;"></i></a>
+        </div>
+        <br>
+    </div>
+    <div class="fluid circular ui icon button" id="order" style="font-size: large;background-color: #4a90e2;color: white;">
+        <i class="icon time"></i><span style="margin-left: 20px;">预约</span>
+    </div>
+    <div class="ui green message" style="margin-top: 20px;display: none;" align="center" id="message">
+        <span style="text-align: center">帮帮会马上联系您哦！</span>
+    </div>
+
+</div>
+<footer class="footer" style="">
+    <div class="foot" align="center">
+        <span>获取更多服务</span>
+        <a class="circular ui label" style="margin-left: 20px;border-color: white;color: #4a90e2;"
+           href="http://a.app.qq.com/o/simple.jsp?pkgname=com.weiwuu.fairy">
+            下载APP
+        </a>
+    </div>
+    北京为屋得新提供技术支持
+</footer>
+
+<script src="time/js/mobiscroll.core-2.5.2.js" type="text/javascript"></script>
+<script src="time/js/mobiscroll.core-2.5.2-zh.js" type="text/javascript"></script>
+<script src="time/js/mobiscroll.android-ics-2.5.2.js" type="text/javascript"></script>
+<script src="time/js/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
+<script src="time/js/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
+<script src="time/js/mobiscroll.list-2.5.1.js" type="text/javascript"></script>
+<script src="time/js/mobiscroll.list-2.5.1.js" type="text/javascript"></script>
+<script src="time/js/mobiscroll.select-2.5.1.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/order.js?111"></script>
+<script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") { //是否微信浏览器
+        document.write("<script src='js/wx.js'><\/script>");
+    }
+</script>
+</body>
+</html>

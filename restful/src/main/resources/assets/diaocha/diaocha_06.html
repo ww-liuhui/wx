@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2014年曲靖话专业六级考试</title>
+        <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <!--        <link href="bootstrap.min.css" rel="stylesheet">
+                <script src="jquery.min.js"></script>
+                <script src="bootstrap.min.js"></script>-->
+        <script src="WeixinApi.js"></script>
+        <style>
+
+            .head img {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color:#858585;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+        </style>
+        <script>
+            
+            var descok = "2014年曲靖方言专业六级考试";//分享内容
+            
+            var Allquestion = Array();
+            //问题1
+            Allquestion[0] = Array();
+            Allquestion[0]['tid'] = "1";
+            Allquestion[0]['title'] = "1、“壳膝头”一词表示的意思是？";
+            Allquestion[0]['ans'] = Array();
+            Allquestion[0]['ans'][0] = {"name":"A、膝盖","score":10};
+            Allquestion[0]['ans'][1] = {"name":"B、头颅","score":0};
+            Allquestion[0]['ans'][2] = {"name":"C、子弹头","score":0};
+            //问题2
+            Allquestion[1] = Array();
+            Allquestion[1]['tid'] = "2";
+            Allquestion[1]['title'] = "2、“牙巴骨”一词表示的意思是？";
+            Allquestion[1]['ans'] = Array();
+            Allquestion[1]['ans'][0] = {"name":"A、骨头","score":0};
+            Allquestion[1]['ans'][1] = {"name":"B、牙齿","score":0};
+            Allquestion[1]['ans'][2] = {"name":"C、牙床","score":10};
+            //问题3
+            Allquestion[2] = Array();
+            Allquestion[2]['tid'] = "3";
+            Allquestion[2]['title'] = "3、“杂烟”一词表示的意思是？";
+            Allquestion[2]['ans'] = Array();
+            Allquestion[2]['ans'][0] = {"name":"A、品种杂乱的烟","score":0};
+            Allquestion[2]['ans'][1] = {"name":"B、抽烟","score":10};
+            Allquestion[2]['ans'][2] = {"name":"C、烤烟","score":0};
+            //问题4
+            Allquestion[3] = Array();
+            Allquestion[3]['tid'] = "4";
+            Allquestion[3]['title'] = "4、“芋头”一词表示的意思是？";
+            Allquestion[3]['ans'] = Array();
+            Allquestion[3]['ans'][0] = {"name":"A、土豆","score":10};
+            Allquestion[3]['ans'][1] = {"name":"B、红薯","score":0};
+            Allquestion[3]['ans'][2] = {"name":"C、花生","score":0};
+            //问题5
+            Allquestion[4] = Array();
+            Allquestion[4]['tid'] = "5";
+            Allquestion[4]['title'] = "5、“卧狼室”一词表示的意思是？";
+            Allquestion[4]['ans'] = Array();
+            Allquestion[4]['ans'][0] = {"name":"A、石头","score":10};
+            Allquestion[4]['ans'][1] = {"name":"B、卧室","score":0};
+            Allquestion[4]['ans'][2] = {"name":"C、狼圈","score":0};
+            //问题6
+            Allquestion[5] = Array();
+            Allquestion[5]['tid'] = "6";
+            Allquestion[5]['title'] = "6、“日龙包”一词表示的意思是？";
+            Allquestion[5]['ans'] = Array();
+            Allquestion[5]['ans'][0] = {"name":"A、小笼包","score":0};
+            Allquestion[5]['ans'][1] = {"name":"B、傻瓜","score":10};
+            Allquestion[5]['ans'][2] = {"name":"C、馒头","score":0};
+            //问题7
+            Allquestion[6] = Array();
+            Allquestion[6]['tid'] = "7";
+            Allquestion[6]['title'] = "7、“生b爪爪”一词表示的意思是？";
+            Allquestion[6]['ans'] = Array();
+            Allquestion[6]['ans'][0] = {"name":"A、水果没成熟的形容词","score":10};
+            Allquestion[6]['ans'][1] = {"name":"B、抓东西","score":0};
+            Allquestion[6]['ans'][2] = {"name":"C、狗爪子","score":0};
+            //问题8
+            Allquestion[7] = Array();
+            Allquestion[7]['tid'] = "8";
+            Allquestion[7]['title'] = "8、“肿脖子”一词表示的意思是？";
+            Allquestion[7]['ans'] = Array();
+            Allquestion[7]['ans'][0] = {"name":"A、喉咙发炎","score":0};
+            Allquestion[7]['ans'][1] = {"name":"B、脖子肿了","score":0};
+            Allquestion[7]['ans'][2] = {"name":"C、吃饭","score":10};
+            //问题9
+            Allquestion[8] = Array();
+            Allquestion[8]['tid'] = "9";
+            Allquestion[8]['title'] = "9、“鬼迷日眼”一词表示的意思是？";
+            Allquestion[8]['ans'] = Array();
+            Allquestion[8]['ans'][0] = {"name":"A、猥琐","score":10};
+            Allquestion[8]['ans'][1] = {"name":"B、狗腿子","score":0};
+            Allquestion[8]['ans'][2] = {"name":"C、汉奸","score":0};
+            //问题10
+            Allquestion[9] = Array();
+            Allquestion[9]['tid'] = "10";
+            Allquestion[9]['title'] = "10、“莲花白”一词表示的意思是？";
+            Allquestion[9]['ans'] = Array();
+            Allquestion[9]['ans'][0] = {"name":"A、藕","score":0};
+            Allquestion[9]['ans'][1] = {"name":"B、白菜","score":0};
+            Allquestion[9]['ans'][2] = {"name":"C、包菜","score":10};
+            
+            
+            
+            var Allans = Array();
+            //答案A
+            Allans[0] = Array();
+            Allans[0]['tip'] = "A";
+            Allans[0]['title'] = "不及格";
+            Allans[0]['content'] = "建议你还是坐在电脑面前多看看曲靖的信息吧！！";
+            //答案B
+            Allans[1] = Array();
+            Allans[1]['tip'] = "B";
+            Allans[1]['title'] = "四级";
+            Allans[1]['content'] = "你可以在当地朋友的指导下勉强到曲靖各地走走";
+            //答案C
+            Allans[2] = Array();
+            Allans[2]['tip'] = "C";
+            Allans[2]['title'] = "六级";
+            Allans[2]['content'] = "你可以独自在曲靖潇洒了";
+            
+            
+            $(function(){
+                //                nextQuestion(0);
+            }); 
+           
+            function reloadme(){
+                location.reload();             
+            }
+            var myscore = 0;
+            function start(obj,id){
+                if(id == 0){
+                    $(obj).removeClass().addClass("btn btn-warning btn-lg btn-block");
+                    setTimeout(function(){nextQuestion(id,0)},500);
+                }             
+            }
+            
+            function selectMe(obj,score,id){
+                if(score == 10){ //正确答案
+                    $(obj).removeClass().addClass("btn btn-success btn-lg");  
+                }else{  //错误答案
+                    $(obj).removeClass().addClass("btn btn-danger btn-lg");
+                }
+                setTimeout(function(){nextQuestion(id,score)},500);
+            }
+            function nextQuestion(nowid,score){
+                myscore += score;
+                var questionLeng = Allquestion.length;
+                var question = "";
+                if(nowid >= questionLeng){
+                    var anstr = '<table class="table"><tbody>';
+                    var resTitle = "2014年曲靖话专业六级考试";
+                    var result = "你的得分：" + myscore;
+                    //                    for(var i=0;i<Allans.length;i++){
+                    //                        if(nowid == Allans[i]['tip']){
+                    //                            resTitle = Allans[i]['title'];
+                    //                            descok = Allans[i]['title'];
+                    //                            result = Allans[i]['content'];
+                    //                            break;
+                    //                        }
+                    //                    }
+                    var ansId = 0;
+                    if(myscore > 0 && myscore <=50){
+                        ansId = 0;
+                    }else if(myscore <=80){
+                        ansId = 1;
+                    }else if(myscore <=100){
+                        ansId = 2;
+                    }
+                    resTitle = Allans[ansId]['title'];
+                    result = Allans[ansId]['content'];
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-primary  btn-lg btn-block" onclick="show()">分享给好友</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-success  btn-lg btn-block" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd">关注酷玩大学，大学不再无聊~~</a></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><button type="button" class="btn btn-warning btn-lg btn-block" onclick="reloadme()">再测一次</button></td></tr>';
+                    anstr +=   '<tr><td  class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">我还想玩其他好玩的</a></td></tr>';
+                    anstr +=  '</tbody></table>';
+                    question = '<h4 class="text-center text-warning">你的得分为:'+ myscore +'('+ resTitle +')</h4><strong>详细分析：</strong><h5>&nbsp;&nbsp;'+ result +'</h5>' + anstr;
+                }else{
+                    var tid = Allquestion[nowid]['tid'];
+                    var title = Allquestion[nowid]['title'];
+                    var anstr = '<table class="table"><tbody>';
+                    anstr += '<tr class="warning"><td class="text-center"><div class="btn-group-vertical">';
+                    for(var i=0;i<Allquestion[nowid]['ans'].length;i++){
+                        //                        var classId = parseInt(4*Math.random());
+                        var className = "active";
+                        switch(i){
+                            case 0:
+                                className = "active";
+                                break;
+                            case 1:
+                                className = "success";
+                                break;
+                            case 2:
+                                className = "warning";
+                                break;
+                            case 3:
+                                className = "active";
+                                break;
+                            case 4:
+                                className = "info";
+                                break;
+                        }
+                        
+                        anstr += '<button type="button" class="btn btn-default btn-lg active" onclick="selectMe(this,'+ Allquestion[nowid]['ans'][i]["score"] +','+ Allquestion[nowid]['tid'] +');">'+ Allquestion[nowid]['ans'][i]["name"] +'</button>';
+                    }
+                    anstr +=  '</div></td></tr></tbody></table>';
+                    question = '<h5 class="text-center text-warning">你的得分为:'+ myscore +'</h5>'+'<h4 id="'+ tid +'" class="text-center">'+ title +'</h4>' + anstr;
+                }
+                $(".span12").html(question);
+            }
+            
+            
+            
+            // 微信分享的数据
+            window.wxData = {
+                "appId": "", // 服务号可以填写appId
+                "imgUrl":'http://115.29.231.215/diaocha1/share/04.jpg',
+                "link":'http://115.29.231.215/diaocha1/diaocha_06.html',
+                "desc":"我在曲靖话六级考试中得到了"+ myscore +"分，你能超过我么？2014曲靖话六级考试",
+                "title":"2014曲靖话六级考试"
+            };
+            function share(){
+                document.title = window.wxData.desc = "我在曲靖话六级考试中得到了"+ myscore +"分，你能超过我么？2014曲靖话六级考试";
+            };
+            WeixinApi.ready(function(Api) {
+                // 分享的回调
+                var wxCallbacks = {
+                    ready : function() {
+                    },
+                    cancel : function(resp) {
+                    },
+                    fail : function(resp) {
+                    },
+                    confirm : function(resp) {
+                    },
+                    all : function(resp) {
+                    }
+                };
+                Api.shareToFriend(wxData, wxCallbacks);
+                Api.shareToTimeline(wxData, wxCallbacks);
+                Api.shareToWeibo(wxData, wxCallbacks);
+            });
+            
+            function show(){
+                var fade=document.getElementById('fade');
+                fade.style.display='block';
+                share();//分享初始化
+            }
+            function hide(){
+                var fade=document.getElementById('fade');
+                fade.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        <!--        <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+                       <img src="pg_04.png" height="100%" width="100%"/>    
+                    </div>-->
+        <div class="head">
+            <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzAwMzA3NTEzOQ==&mid=201365312&idx=1&sn=49cd7c09b92b8668767b4dae9693ad0e#rd"><img src="head.png"></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <table class="table">
+                        <tbody>
+                            <tr class=''><td class="text-center"><h3>2014年曲靖话专业六级考试</h3></td></tr>
+                            <tr class=''><td class="text-left"><p class="text-warning">注意事项：<br/>
+                                        1、本次考试时间为5分钟。考生应在规定时间内完成题目，不得拖延时间。<br/>
+                                        2、仔细阅读题目说明，本次考试所有选择题都是单选，多选、错选均不得分。<br/> 
+                                        3、 严格遵守考场秩序，独立完成考试内容。</p></td></tr>
+                            <tr class=''><td class="text-center"><a type="button" class="btn btn-danger btn-lg btn-block" onclick="start(this,0)">&nbsp;&nbsp;&nbsp;开&nbsp;始&nbsp;考&nbsp;试&nbsp;&nbsp;&nbsp;</a></td></tr>
+                            <tr><td  class="text-center"><a type="button" class="btn btn-success btn-lg btn-block" href="http://115.29.231.215/index.php?g=Wap&m=Index&a=lists&classid=748&token=lpolnf1409216792">&nbsp;更&nbsp;多&nbsp;测&nbsp;试&nbsp;</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="fade" class="black_overlay" onclick="hide()">
+            <img src="share.png" style="width:100%"/>
+        </div>
+    </body>
+</html>			

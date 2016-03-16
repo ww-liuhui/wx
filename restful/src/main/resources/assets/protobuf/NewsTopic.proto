@@ -1,0 +1,11 @@
+// 消息主题
+message NewsTopic
+{
+    // 主题ID
+    optional int32 id = 1;
+
+    // 主题: (限制字数 <= 16)
+    optional string topic = 2;
+	// 说明: (限制字数 <= 256)
+    optional string notes = 3;
+}

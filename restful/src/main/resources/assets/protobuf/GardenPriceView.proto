@@ -1,0 +1,14 @@
+import "GardenPriceItem.proto";
+import "GardenPriceNews.proto";
+
+message GardenPriceView
+{
+    // 楼盘 ID
+    required int32 gardenId = 1;
+
+    // 价格跟踪清单
+    repeated GardenPriceItem priceList = 2;
+
+    // 变动信息清单
+    repeated GardenPriceNews priceNews = 3;
+}

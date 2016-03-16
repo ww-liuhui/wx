@@ -1,0 +1,31 @@
+// 消息跟帖
+message NewsFollow
+{
+    // 跟帖ID
+    optional int32 id = 1;
+    // 消息ID
+    optional int32 newsId = 2;
+
+
+    // 发布时间:  (yyyy-MM-dd hh:mm:dd)
+    optional string issueTime = 3;
+
+
+    // 作者 ID
+    optional int32  authorId  = 10;
+	// 作者的昵称
+    optional string authorNickName = 11;
+	// 作者头像的URL
+    optional string authorAvatarURL = 12;
+
+    // 内容: (限制字数 <= 2048)
+    optional string content = 15;
+
+
+    // 赞同统计
+    optional int32 assentCount = 20;
+    // 反对统计
+    optional int32 opposeCount = 21;
+    // 举报统计
+    optional int32 reportCount = 22;
+}

@@ -1,0 +1,19 @@
+import "NewsType.proto";
+import "NewsTag.proto";
+import "NewsTopic.proto";
+import "News.proto";
+import "NewsFollow.proto";
+// 消息
+message NewsList
+{
+	// 分类列表
+    repeated NewsType newsTypeList = 1;
+    // 标签列表
+    repeated NewsTag newsTagList = 2;
+    // 主题列表
+    repeated NewsTopic newsTopicList = 3;
+    // 资讯列表
+    repeated News newsList = 4;
+    // 评论列表
+    repeated NewsFollow newsFollowList = 5;
+}
