@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -124,6 +125,60 @@ public class GardenService
     }
 
     /***
+     * 抽奖
+     * @param id
+     * @param name
+     * @param tel
+     * @return
+     */
+    public int lucky(int id,String tel,String name)
+    {
+        int code = 0;
+        try
+        {
+            dao.begin();
+            //判断是否抽过奖
+            int isDo = dao.isDo(tel);
+            if(isDo>0){
+                code = dao.getLuckyCode(tel);
+            }else{
+                //判断是否还有中奖名额
+                int flagH = dao.haveCode(id);
+                boolean flagR = isLucky(30);
+                //有名额，且中奖
+                if(flagH>0&&flagR){
+                    //生成中奖号码
+                    Random random = new Random();
+                    code = random.nextInt(899999);
+                    code = code+100000;
+                    //更新中奖数
+                    dao.updateLuckyNum(id);
+                }
+                //设置中奖号码
+                dao.setLuckyCode(id,tel,name,code);
+            }
+            dao.commit();
+        }catch (Exception e){
+            LOGGER.error("抽奖失败："+e.getMessage());
+            dao.rollback();
+        }
+        return code;
+    }
+
+    /***
+     * 是否中奖
+     * @param percent  中奖百分比：0-100
+     * @return
+     */
+    public boolean isLucky(int percent) {
+        Random random = new Random();
+        int code = random.nextInt(100);
+        if(code<percent){
+            return true;
+        }
+        return false;
+    }
+    /***
      * 判断是否为手机号
      * @param mobiles
      * @return
@@ -133,4 +188,19 @@ public class GardenService
         Matcher m = p.matcher(mobiles);
         return m.matches();
     }
+
+    public static void main(String[] args) throws Exception
+    {
+        Random random = new Random();
+        int code = random.nextInt(100);
+        System.out.println("code:"+code);
+    }
+
+//    public static double surfMatch(float[] imagePointArr, float[] facePointArr) {
+//        float sum=0f;
+//        for(int i=0; i < FACEPOINT; i++) {
+//            sum += (imagePointArr[i] - facePointArr[i])*(imagePointArr[i] - facePointArr[i]);
+//        }
+//        return Math.sqrt(sum);
+//    }
 }

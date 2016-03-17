@@ -1,20 +1,10 @@
 {
   "head": {
-    "message": "success",
-    "itemCount": 1,
-    "code": 1
+    "message": "很遗憾，没有中奖。",
+    "itemCount": 0,
+    "code": 0
   },
   "body": {
-    "data": {
-      "openId": "ozXzKwsMA1JsFx1ULr11MwwwhubU",
-      "nickname": "大灰",
-      "sex": 1,
-      "country": "CN",
-      "province": "Yunnan",
-      "city": "Kunming",
-      "headIngUrl": "http://wx.qlogo.cn/mmopen/PiajxSqBRaEKFzE7pEGvbdIXiamz8uBBQDM7FmL7AFUKkSXfPFArInRQvyMhaUMetepVWq6cunCVHL0wicnz0QeMQShkXuyibAHibmdsVcXCVMiaQ/0",
-      "privilegeList": [],
-      "unionid": "oER91v_IQa9epzExagZbGfwpaKaQ"
-    }
+    "data": null
   }
 }

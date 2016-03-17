@@ -70,4 +70,21 @@ public abstract class GardenDAO implements Transactional<GardenDAO>
     @SqlUpdate("insert into wxorder(name,tel,time,addr_from,addr_to,create_time) values(:name,:tel,:time,:addr_from,:addr_to,:create_time)")
     public abstract int createOrder(@Bind("name") String name, @Bind("tel") String tel,@Bind("time") String time,@Bind("addr_from") String addr_from,@Bind("addr_to") String addr_to,@Bind("create_time") Date create_time);
 
+    //
+    @SqlQuery("select count(*) from lucky where tel=:tel")
+    public abstract int isDo(@Bind("tel") String tel);
+
+    @SqlQuery("select code from lucky where tel=:tel")
+    public abstract int getLuckyCode(@Bind("tel") String tel);
+
+    @SqlQuery("select count(*) from lucky_c where id=:id and num>win")
+    public abstract int haveCode(@Bind("id") int id);
+
+    @SqlUpdate("insert into lucky(tel,name,code,cid) values(:tel,:name,:code,:id)")
+    public abstract int setLuckyCode(@Bind("id")int id,@Bind("tel") String tel,@Bind("name") String name,@Bind("code")
+    int code);
+
+
+    @SqlUpdate("UPDATE lucky_c SET win = win + 1 WHERE id=:id")
+    public abstract void updateLuckyNum(@Bind("id")int id);
 }

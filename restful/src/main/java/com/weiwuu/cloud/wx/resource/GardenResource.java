@@ -517,4 +517,35 @@ public class GardenResource
         }
         return rc.build(0, "预约看房失败", 0, null);
     }
+
+    /***
+     * 抽奖
+     * @param id
+     * @param tel
+     * @param name
+     * @return
+     */
+    @GET
+    @Path("lucky")
+    public ResponseContent lucky(@QueryParam("id") @DefaultValue("0") int id,@QueryParam("tel") @DefaultValue("") String tel,@QueryParam("name") @DefaultValue("") String name)
+    {
+        ResponseContent rc = new ResponseContent();
+        int code = 0;
+        try
+        {
+            code = gs.lucky(id,tel,name);
+            if(code>0){
+                return rc.build(1, "恭喜您，中奖了！", 1, code);
+            }else if(code==0){
+                return rc.build(0, "很遗憾，没有中奖。", 0, null);
+            }
+
+        }
+        catch (Exception e)
+        {
+            LOGGER.error("很遗憾，没有中奖" + e.getMessage());
+            e.printStackTrace();
+        }
+        return rc.build(0, "很遗憾，没有中奖", 0, null);
+    }
 }
